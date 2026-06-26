@@ -196,15 +196,15 @@ docs/meter-history.md     “一米的故事”样章草稿
 
 | 路由 | 页面 | 核心问题 | 主要内容方向 |
 | --- | --- | --- | --- |
-| `/` | 首页 / Why Measurement Matters | 为什么人类需要共同的测量标准？ | 项目介绍、主标语、核心时间线、第一章入口 |
-| `/meter` | The Story of the Meter | 一米如何从地球尺度走向光速？ | 法国大革命、子午线测量、米原器、氪原子、光速定义 |
-| `/ancient-measures` | Ancient Measures | 古代文明如何测量世界？ | 埃及肘尺、巴比伦 60 进制、中国度量衡、罗马与英制传统 |
-| `/standardization` | Standardization | 统一标准如何影响社会秩序？ | 市场公平、税收、土地管理、法律、国家治理、国际合作 |
-| `/everyday-life` | Measurement in Everyday Life | 度量衡如何进入普通生活？ | 市场、建筑、农业、交通、医学、消费、单位错误案例 |
-| `/si-units` | Modern SI Units | 国际单位制如何形成？ | 公制系统、《米制公约》、BIPM、SI 七个基本单位 |
-| `/modern-measurement` | Measurement in the Modern World | 高精度测量如何支撑现代科技？ | GPS、原子钟、芯片制造、医学、航天、工业制造 |
-| `/future` | Future of Measurement | 未来测量会把人类带向哪里？ | 量子测量、纳米尺度、AI 传感器、太空探索 |
-| `/resources` | Resources | 参考资料如何持续整理？ | 资料索引、主题标签、引用来源、图片与数据素材清单 |
+| `/` | Home / 首页 / Why Measurement Matters | 为什么人类需要共同的测量标准？ | 项目介绍、主标语、核心时间线、第一章入口 |
+| `/meter` | The Story of the Meter / 米的故事 | 一米如何从地球尺度走向光速？ | 法国大革命、子午线测量、米原器、氪原子、光速定义 |
+| `/ancient-measures` | Ancient Measures / 古代度量衡 | 古代文明如何测量世界？ | 埃及肘尺、巴比伦 60 进制、中国度量衡、罗马与英制传统 |
+| `/standardization` | Standardization / 标准化 | 统一标准如何影响社会秩序？ | 市场公平、税收、土地管理、法律、国家治理、国际合作 |
+| `/everyday-life` | Measurement in Everyday Life / 日常生活中的测量 | 度量衡如何进入普通生活？ | 市场、建筑、农业、交通、医学、消费、单位错误案例 |
+| `/si-units` | Modern SI Units / 现代国际单位制 | 国际单位制如何形成？ | 公制系统、《米制公约》、BIPM、SI 七个基本单位 |
+| `/modern-measurement` | Measurement in the Modern World / 现代测量 | 高精度测量如何支撑现代科技？ | GPS、原子钟、芯片制造、医学、航天、工业制造 |
+| `/future` | Future of Measurement / 未来测量 | 未来测量会把人类带向哪里？ | 量子测量、纳米尺度、AI 传感器、太空探索 |
+| `/resources` | Resources / 参考资料 | 参考资料如何持续整理？ | 资料索引、主题标签、引用来源、图片与数据素材清单 |
 
 ## 互动设计创意
 

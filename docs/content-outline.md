@@ -354,6 +354,17 @@ docs/
 - 可引用的关键事实
 - 图片、数据或文字是否适合直接使用
 
+示例格式：
+
+```markdown
+- 标题：BIPM: The Metre Convention
+- 链接：https://www.bipm.org/en/metre-convention
+- 主题标签：米制公约、国际合作、BIPM
+- 支持章节：/meter、/si-units、/resources
+- 关键事实：1875 年《米制公约》推动国际计量合作制度化。
+- 素材说明：适合作为制度背景资料，不直接复用图片。
+```
+
 建议先按以下主题分类：
 
 1. 米与公制系统：米的定义、公制改革、《米制公约》、BIPM。
