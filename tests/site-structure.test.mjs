@@ -16,6 +16,8 @@ const routes = [
   '/resources/',
 ];
 
+const homepageLinks = routes.slice(1).map((route) => route.slice(1));
+
 test('homepage explains MeasureQuest and links to main sections', async () => {
   const html = await readFile(join(root, 'index.html'), 'utf8');
 
@@ -26,8 +28,8 @@ test('homepage explains MeasureQuest and links to main sections', async () => {
   assert.match(html, /度量衡发展时间线/);
   assert.match(html, /参考资料入口/);
 
-  for (const route of routes.slice(1)) {
-    assert.match(html, new RegExp(`href="${route.slice(1)}"`));
+  for (const link of homepageLinks) {
+    assert.ok(html.includes(`href="${link}"`), `homepage should link to ${link}`);
   }
 });
 
