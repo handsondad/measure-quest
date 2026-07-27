@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { test } from 'node:test';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const routes = [
   '/',
   '/meter/',
@@ -18,19 +19,31 @@ const routes = [
 
 const homepageLinks = routes.slice(1).map((route) => route.slice(1));
 
-test('homepage explains MeasureQuest and links to main sections', async () => {
+test('homepage explains MeasureQuest and links to the guided reading path', async () => {
   const html = await readFile(join(root, 'index.html'), 'utf8');
 
   assert.match(html, /MeasureQuest/);
-  assert.match(html, /From the king’s arm to the speed of light\./);
-  assert.match(html, /从古代身体尺度到现代自然常数/);
-  assert.match(html, /主要章节入口/);
-  assert.match(html, /度量衡发展时间线/);
-  assert.match(html, /参考资料入口/);
+  assert.match(html, /我们如何/);
+  assert.match(html, /共同定义/);
+  assert.match(html, /八段旅程/);
+  assert.match(html, /Five turning points/);
+  assert.match(html, /资料库/);
 
   for (const link of homepageLinks) {
     assert.ok(html.includes(`href="${link}"`), `homepage should link to ${link}`);
   }
+});
+
+test('homepage includes the interactive body-scale laboratory', async () => {
+  const html = await readFile(join(root, 'index.html'), 'utf8');
+  const script = await readFile(join(root, 'app.js'), 'utf8');
+
+  assert.match(html, /id="scale-lab"/);
+  assert.match(html, /id="height"/);
+  assert.match(html, /id="result-title"/);
+  assert.match(html, /src="app\.js"/);
+  assert.match(script, /function updateScaleLab\(\)/);
+  assert.match(script, /height\?\.addEventListener\('input', updateScaleLab\)/);
 });
 
 test('all planned routes exist as static GitHub Pages entry points', async () => {
