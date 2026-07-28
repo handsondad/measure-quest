@@ -5,51 +5,65 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const routes = [
-  '/',
-  '/meter/',
-  '/ancient-measures/',
-  '/standardization/',
-  '/everyday-life/',
-  '/si-units/',
-  '/modern-measurement/',
-  '/future/',
-  '/resources/',
-];
-
-const homepageLinks = routes.slice(1).map((route) => route.slice(1));
-
-test('homepage explains MeasureQuest and links to the guided reading path', async () => {
+test('Vite entry point mounts the React application', async () => {
   const html = await readFile(join(root, 'index.html'), 'utf8');
 
-  assert.match(html, /MeasureQuest/);
-  assert.match(html, /我们如何/);
-  assert.match(html, /共同定义/);
-  assert.match(html, /八段旅程/);
-  assert.match(html, /Five turning points/);
-  assert.match(html, /资料库/);
+  assert.match(html, /id="root"/);
+  assert.match(html, /src="\/src\/main\.jsx"/);
+});
 
-  for (const link of homepageLinks) {
-    assert.ok(html.includes(`href="${link}"`), `homepage should link to ${link}`);
+test('React application defines discovery and learning routes', async () => {
+  const app = await readFile(join(root, 'src', 'App.jsx'), 'utf8');
+  const main = await readFile(join(root, 'src', 'main.jsx'), 'utf8');
+  const chapters = await readFile(join(root, 'src', 'data.js'), 'utf8');
+
+  assert.match(main, /HashRouter/);
+  assert.match(app, /path="\/stories"/);
+  assert.match(app, /path="\/learn"/);
+  assert.match(app, /path="\/lab"/);
+  assert.match(app, /path="\/resources"/);
+  assert.match(app, /path="\/:slug"/);
+  for (const slug of ['meter', 'ancient-measures', 'standardization', 'everyday-life', 'si-units', 'modern-measurement', 'future', 'resources']) {
+    assert.match(chapters, new RegExp(`slug: '${slug}'`));
   }
 });
 
-test('homepage includes the interactive body-scale laboratory', async () => {
-  const html = await readFile(join(root, 'index.html'), 'utf8');
-  const script = await readFile(join(root, 'app.js'), 'utf8');
+test('body-scale laboratory is a stateful, clearly labeled model', async () => {
+  const component = await readFile(join(root, 'src', 'components', 'ScaleLab.jsx'), 'utf8');
 
-  assert.match(html, /id="scale-lab"/);
-  assert.match(html, /id="height"/);
-  assert.match(html, /id="result-title"/);
-  assert.match(html, /src="app\.js"/);
-  assert.match(script, /function updateScaleLab\(\)/);
-  assert.match(script, /height\?\.addEventListener\('input', updateScaleLab\)/);
+  assert.match(component, /useState\(170\)/);
+  assert.match(component, /id="scale-lab"/);
+  assert.match(component, /onChange=/);
+  assert.match(component, /20 m ≈/);
+  assert.match(component, /近似模型/);
 });
 
-test('all planned routes exist as static GitHub Pages entry points', async () => {
-  for (const route of routes) {
-    const file = route === '/' ? 'index.html' : join(route.slice(1), 'index.html');
+test('React source and Vite configuration exist', async () => {
+  for (const file of ['src/main.jsx', 'src/App.jsx', 'src/components/Home.jsx', 'src/components/Stories.jsx', 'src/components/Explore.jsx', 'src/components/LabPage.jsx', 'src/components/SIUnitAtlas.jsx', 'src/components/ChapterPage.jsx', 'src/components/Resources.jsx', 'vite.config.js']) {
     const entry = await stat(join(root, file));
-    assert.equal(entry.isFile(), true, `${route} should have an index.html file`);
+    assert.equal(entry.isFile(), true, `${file} should exist`);
   }
+});
+
+test('chapter content includes learning prompts and structured sections', async () => {
+  const chapters = await readFile(join(root, 'src', 'data.js'), 'utf8');
+  const page = await readFile(join(root, 'src', 'components', 'ChapterPage.jsx'), 'utf8');
+
+  assert.match(chapters, /question:/);
+  assert.match(chapters, /facts:/);
+  assert.match(chapters, /sections:/);
+  assert.match(page, /question-card/);
+  assert.match(page, /chapter-facts/);
+});
+
+test('content model includes scalable collections and traceable featured stories', async () => {
+  const data = await readFile(join(root, 'src', 'data.js'), 'utf8');
+
+  assert.match(data, /export const collections/);
+  assert.match(data, /export const featuredStories/);
+  assert.match(data, /NIST · SI Units/);
+  assert.match(data, /BIPM · CGPM Resolution 1/);
+  assert.match(data, /export const siUnitProfiles/);
+  assert.match(data, /symbol: 'cd'/);
+  assert.equal((data.match(/symbol: '/g) ?? []).length, 7);
 });
