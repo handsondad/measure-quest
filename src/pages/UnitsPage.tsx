@@ -66,11 +66,13 @@ export function UnitsPage({ onBack, onUnit, onTimeline, onSources, onTopic }: Pr
           {duLiangHeng.map((row) => (
             <div key={row.char} className="units-dlh-col">
               <span className="units-dlh-char">{row.char}</span>
-              <b>{row.means}</b>
-              <small>古时候：{row.then}</small>
-              <span className="units-dlh-arrow" aria-hidden="true">↓</span>
-              {row.unit ? <UnitChip id={row.unit} onUnit={onUnit} /> : <span className="unit-chip is-plain">🥛 {row.now}</span>}
-              {row.note && <small>{row.note}</small>}
+              <div className="units-dlh-body">
+                <b>{row.means}</b>
+                <small>古时候：{row.then}</small>
+                <span className="units-dlh-arrow" aria-hidden="true">↓</span>
+                {row.unit ? <UnitChip id={row.unit} onUnit={onUnit} /> : <span className="unit-chip is-plain">🥛 {row.now}</span>}
+                {row.note && <small>{row.note}</small>}
+              </div>
             </div>
           ))}
         </div>
@@ -90,7 +92,7 @@ export function UnitsPage({ onBack, onUnit, onTimeline, onSources, onTopic }: Pr
               </header>
               <p className="units-recipe">{unit.recipe}</p>
               <div className="units-uses">
-                {unit.uses.map((id) => <UnitChip key={id} id={id} />)}
+                {unit.uses.map((id) => <UnitChip key={id} id={id} onUnit={onUnit} />)}
                 {unit.legalOnly && <span className="units-tag">我国法定单位</span>}
               </div>
             </article>
@@ -105,17 +107,29 @@ export function UnitsPage({ onBack, onUnit, onTimeline, onSources, onTopic }: Pr
           <table className="units-table units-prefixes">
             <thead><tr><th>词头</th><th>符号</th><th>多少倍</th><th>在哪儿见过</th></tr></thead>
             <tbody>
-              {prefixes.map((prefix) => (
-                <tr key={prefix.symbol} className={prefix.power < 0 ? "is-small" : undefined}>
-                  <td><b>{prefix.name}</b>{prefix.isNew && " ✨"}</td>
-                  <td><code>{prefix.symbol}</code></td>
-                  <td>
-                    {powerOfTen(prefix.power)}
-                    <small className="units-say">{prefix.power > 0 ? `1 后面 ${prefix.power} 个 0` : `分成 1 后面 ${-prefix.power} 个 0 份`}</small>
-                  </td>
-                  <td>{prefix.example ?? ""}</td>
-                </tr>
-              ))}
+              {prefixes.flatMap((prefix) => {
+                const row = (
+                  <tr key={prefix.symbol} className={prefix.power < 0 ? "is-small" : undefined}>
+                    <td><b>{prefix.name}</b>{prefix.isNew && " ✨"}</td>
+                    <td><code>{prefix.symbol}</code></td>
+                    <td>
+                      {powerOfTen(prefix.power)}
+                      <small className="units-say">{prefix.power > 0 ? `1 后面 ${prefix.power} 个 0` : `分成 1 后面 ${-prefix.power} 个 0 份`}</small>
+                    </td>
+                    <td>{prefix.example ?? ""}</td>
+                  </tr>
+                );
+                if (prefix.power !== 1) return [row];
+                return [
+                  row,
+                  <tr key="origin" className="is-origin">
+                    <td><b>不加词头</b></td>
+                    <td><code>—</code></td>
+                    <td>1<small className="units-say">↑ 往上放大 · ↓ 往下缩小</small></td>
+                    <td>米、克、秒、瓦自己</td>
+                  </tr>
+                ];
+              })}
             </tbody>
           </table>
         </div>

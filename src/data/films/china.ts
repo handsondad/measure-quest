@@ -190,11 +190,11 @@ export const films: readonly Film[] = [
       {
         turn: 0, title: "三尺正好一米", view: "grid", duration: 12,
         cues: [
-          { kind: "ruler", at: [150, 220], length: 900, ticks: 3, every: 0, caption: "1 米", draw: 1.2, from: 0.3 },
-          { kind: "shape", shape: "rect", at: [300, 400], size: [290, 70], color: "#ffd6bf", text: "1 尺", from: 1.8 },
-          { kind: "shape", shape: "rect", at: [600, 400], size: [290, 70], color: "#ffd6bf", text: "1 尺", from: 2.4 },
-          { kind: "shape", shape: "rect", at: [900, 400], size: [290, 70], color: "#ffd6bf", text: "1 尺", from: 3 },
-          { kind: "text", at: [600, 560], text: "1 市尺 = 三分之一米", size: "m", color: "#225dac", from: 4.4 },
+          { kind: "ruler", at: [150, 180], length: 900, ticks: 3, every: 0, caption: "1 米", draw: 1.2, from: 0.3 },
+          { kind: "shape", shape: "rect", at: [300, 420], size: [290, 70], color: "#ffd6bf", text: "1 尺", from: 1.8 },
+          { kind: "shape", shape: "rect", at: [600, 420], size: [290, 70], color: "#ffd6bf", text: "1 尺", from: 2.4 },
+          { kind: "shape", shape: "rect", at: [900, 420], size: [290, 70], color: "#ffd6bf", text: "1 尺", from: 3 },
+          { kind: "text", at: [600, 575], text: "1 市尺 = 三分之一米", size: "m", color: "#225dac", from: 4.4 },
           { kind: "sprite", icon: "👵", path: [[300, 740]], size: 120, from: 7 },
           { kind: "label", at: [360, 740], text: "三尺布正好 1 米", side: "right", pos: [680, 740], from: 7.6 }
         ]
@@ -224,10 +224,10 @@ export const films: readonly Film[] = [
       {
         turn: 3, title: "全国换成法定单位", duration: 12,
         cues: [
-          { kind: "text", at: [600, 110], text: "1984 年：法定计量单位", size: "m", color: "#c27c0e", from: 0.3 },
-          { kind: "sprite", icon: "📚", path: [[300, 330]], size: 120, from: 1.4 },
-          { kind: "sprite", icon: "📦", path: [[600, 330]], size: 120, from: 2 },
-          { kind: "sprite", icon: "⚖️", path: [[900, 330]], size: 120, from: 2.6 },
+          { kind: "text", at: [600, 140], text: "1984 年：法定计量单位", size: "m", color: "#c27c0e", from: 0.3 },
+          { kind: "sprite", icon: "📚", path: [[300, 340]], size: 120, from: 1.4 },
+          { kind: "sprite", icon: "📦", path: [[600, 340]], size: 120, from: 2 },
+          { kind: "sprite", icon: "⚖️", path: [[900, 340]], size: 120, from: 2.6 },
           { kind: "text", at: [600, 500], text: "课本、包装、秤和尺", size: "m", from: 3.4 },
           { kind: "text", at: [600, 630], text: "都用米、千克、升", size: "m", color: "#225dac", from: 5.6 },
           { kind: "text", at: [600, 780], text: "1990 年底换完", size: "m", color: "#2f7d32", from: 8 }

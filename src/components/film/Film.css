@@ -30,31 +30,33 @@
   stroke-width: 0.18em;
   stroke-linejoin: round;
 }
+.film-stage[data-view="space"] .film-text { stroke: #12193d; }
+.film-stage[data-view="space"] .film-on-light .film-text { stroke: #fff; }
 .film-big { font-weight: 900; }
 
 .film-title {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px 6px 6px;
+  gap: 7px;
+  padding: 4px 12px 4px 5px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 2px 8px rgba(93, 78, 55, 0.15);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.92rem;
 }
 .film-title b {
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: #ff9f43;
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 /* 窄的舞台上标题会压住画面顶上的字；播放器下面的场次按钮已经写着标题，这里只留编号 */
 @container film-stage (max-width: 600px) {
@@ -126,12 +128,15 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px 4px 4px;
+  min-height: 36px;
+  padding: 5px 12px 5px 5px;
   border: 2px solid #ffe2c4;
   border-radius: 999px;
   background: #fffaf3;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+  transition: transform 150ms ease, background 0.2s, border-color 0.2s;
 }
+.film-chips button:hover { background: #fff3e3; }
 .film-chips b {
   display: grid;
   place-items: center;

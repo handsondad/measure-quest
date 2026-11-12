@@ -44,11 +44,11 @@ export const films: readonly Film[] = [
       {
         turn: 3, title: "一开始定反了", duration: 11,
         cues: [
-          { kind: "thermo", at: [400, 780], height: 540, start: 0.5, end: 0.5, marks: [{ at: 0.1, text: "100 结冰" }, { at: 0.9, text: "0 烧开" }], from: 0.3, to: 5.6 },
+          { kind: "thermo", at: [400, 650], height: 450, start: 0.5, end: 0.5, marks: [{ at: 0.12, text: "100 结冰" }, { at: 0.9, text: "0 烧开" }], from: 0.3, to: 5.6 },
           { kind: "myth", wrong: "一开始就是冰水 0 度", right: "摄尔修斯起初定反了", from: 1.6, to: 5.6 },
-          { kind: "thermo", at: [400, 780], height: 540, start: 0.5, end: 0.5, marks: [{ at: 0.1, text: "0 结冰" }, { at: 0.9, text: "100 烧开" }], from: 5.6 },
-          { kind: "text", at: [870, 380], text: "倒过来！", size: "l", color: "#ff9f43", from: 6 },
-          { kind: "text", at: [870, 540], text: "说好了就能用", size: "m", color: "#2f7d32", from: 7.8 }
+          { kind: "thermo", at: [400, 650], height: 450, start: 0.5, end: 0.5, marks: [{ at: 0.12, text: "0 结冰" }, { at: 0.9, text: "100 烧开" }], from: 5.6 },
+          { kind: "text", at: [870, 360], text: "倒过来！", size: "l", color: "#ff9f43", from: 6 },
+          { kind: "text", at: [870, 520], text: "说好了就能用", size: "m", color: "#2f7d32", from: 7.8 }
         ]
       },
       {
@@ -80,12 +80,12 @@ export const films: readonly Film[] = [
       {
         turn: 1, title: "两把温度的尺子", duration: 13,
         cues: [
-          { kind: "text", at: [380, 100], text: "摄氏度", size: "m", from: 0.4 },
-          { kind: "thermo", at: [380, 780], height: 540, start: 0.1, end: 0.1, marks: [{ at: 0.1, text: "0" }, { at: 0.9, text: "100" }], from: 0.6 },
-          { kind: "text", at: [820, 100], text: "华氏度", size: "m", from: 2.6 },
-          { kind: "thermo", at: [820, 780], height: 540, start: 0.1, end: 0.1, marks: [{ at: 0.1, text: "32" }, { at: 0.9, text: "212" }], from: 2.8 },
-          { kind: "label", at: [358, 470], text: "100 格", side: "left", pos: [200, 470], from: 6 },
-          { kind: "label", at: [798, 470], text: "180 格", side: "left", pos: [640, 470], from: 7.4 },
+          { kind: "text", at: [380, 140], text: "摄氏度", size: "m", from: 0.4 },
+          { kind: "thermo", at: [380, 780], height: 500, start: 0.1, end: 0.1, marks: [{ at: 0.1, text: "0" }, { at: 0.9, text: "100" }], from: 0.6 },
+          { kind: "text", at: [820, 140], text: "华氏度", size: "m", from: 2.6 },
+          { kind: "thermo", at: [820, 780], height: 500, start: 0.1, end: 0.1, marks: [{ at: 0.1, text: "32" }, { at: 0.9, text: "212" }], from: 2.8 },
+          { kind: "label", at: [358, 490], text: "100 格", side: "left", pos: [200, 490], from: 6 },
+          { kind: "label", at: [798, 490], text: "180 格", side: "left", pos: [640, 490], from: 7.4 },
           { kind: "text", at: [600, 860], text: "华氏一格更小", size: "m", color: "#ff9f43", from: 10 }
         ]
       },
@@ -105,8 +105,8 @@ export const films: readonly Film[] = [
       {
         turn: 3, title: "多数国家用摄氏度", duration: 11,
         cues: [
-          { kind: "sprite", icon: "🌍", path: [[600, 430]], size: 280, from: 0.3 },
-          { kind: "text", at: [600, 110], text: "0 度结冰，100 度烧开", size: "m", from: 1.4 },
+          { kind: "sprite", icon: "🌍", path: [[600, 440]], size: 280, from: 0.3 },
+          { kind: "text", at: [600, 140], text: "0 度结冰，100 度烧开", size: "m", from: 1.4 },
           { kind: "label", at: [520, 420], text: "多数国家：摄氏", side: "left", pos: [240, 330], from: 3.6 },
           { kind: "label", at: [690, 380], text: "美国：华氏", side: "right", pos: [980, 300], from: 5 },
           { kind: "text", at: [600, 780], text: "都没错，只是习惯不同", size: "m", color: "#2f7d32", from: 7.6 }
@@ -162,7 +162,7 @@ export const films: readonly Film[] = [
       {
         turn: 3, title: "没有负数的温度", duration: 13,
         cues: [
-          { kind: "thermo", at: [360, 780], height: 560, start: 0.05, end: 0.8, over: 5, color: "#e5484d", marks: [{ at: 0.05, text: "0 开" }, { at: 0.71, text: "273 开 冰水" }, { at: 0.8, text: "310 开 体温" }], from: 0.3 },
+          { kind: "thermo", at: [360, 780], height: 560, start: 0.05, end: 0.82, over: 5, color: "#e5484d", marks: [{ at: 0.05, text: "0 开" }, { at: 0.65, text: "273 开 冰水" }, { at: 0.82, text: "310 开 体温" }], from: 0.3 },
           { kind: "sprite", icon: "🧊", path: [[820, 260]], size: 100, from: 2.4 },
           { kind: "sprite", icon: "🧒", path: [[960, 260]], size: 100, from: 4.4 },
           { kind: "text", at: [820, 500], text: "永远没有负数", size: "m", color: "#225dac", from: 6.4 },

@@ -15,6 +15,7 @@ type Props = {
   question: MeasureQuestion;
   heard: readonly string[];
   onHeard: (id: string) => void;
+  backLabel?: string;
   onBack: () => void;
   onOpen: (id: string) => void;
   onUnit: (id: BaseUnitId) => void;
@@ -46,7 +47,7 @@ function Show({ show }: { show: BeatShow }) {
   );
 }
 
-export function QuestionPage({ question, heard, onHeard, onBack, onOpen, onUnit }: Props) {
+export function QuestionPage({ question, heard, onHeard, backLabel, onBack, onOpen, onUnit }: Props) {
   const topic = topicById(question.topic);
   const film = filmFor(question.id);
   const voice = useMemo(() => voiceFor(question), [question]);
@@ -76,7 +77,7 @@ export function QuestionPage({ question, heard, onHeard, onBack, onOpen, onUnit 
   return (
     <div className="qa">
       <header className="page-top">
-        <button type="button" className="page-back" onClick={onBack}>← {topic?.emoji} {topic?.title}</button>
+        <button type="button" className="page-back" onClick={onBack}>{backLabel ?? `← ${topic?.emoji} ${topic?.title}`}</button>
         <div className="page-heading">
           <span>
             {difficultyLabel[question.difficulty]}

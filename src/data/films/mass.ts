@@ -108,21 +108,21 @@ export const films: readonly Film[] = [
         turn: 3, title: "交给不变的数", duration: 11,
         cues: [
           { kind: "text", at: [600, 170], text: "普朗克常数", size: "l", color: "#7a4fd6", from: 0.5 },
-          { kind: "sprite", icon: "💡", path: [[340, 430]], size: 100, from: 1.8 },
-          { kind: "label", at: [340, 430], text: "像光速一样不变", side: "bottom", from: 2.3 },
-          { kind: "shape", shape: "circle", at: [860, 430], size: [200, 200], color: "#e9dcff", text: "不变", motion: "pulse", from: 2.8 },
-          { kind: "text", at: [600, 680], text: "2019年5月20日起", size: "m", from: 4.8 },
-          { kind: "text", at: [600, 820], text: "大K退休了", size: "m", color: "#7a6a55", from: 7.6 }
+          { kind: "sprite", icon: "💡", path: [[340, 410]], size: 100, from: 1.8 },
+          { kind: "label", at: [340, 460], text: "像光速一样不变", side: "bottom", pos: [340, 550], from: 2.3 },
+          { kind: "shape", shape: "circle", at: [860, 420], size: [200, 200], color: "#e9dcff", text: "不变", motion: "pulse", from: 2.8 },
+          { kind: "text", at: [600, 700], text: "2019年5月20日起", size: "m", from: 4.8 },
+          { kind: "text", at: [600, 825], text: "大K退休了", size: "m", color: "#7a6a55", from: 7.6 }
         ]
       },
       {
         turn: 4, title: "看不见的手往上托", duration: 12,
         cues: [
-          { kind: "text", at: [600, 130], text: "基布尔秤：不用砝码", size: "m", from: 0.5 },
+          { kind: "text", at: [600, 140], text: "基布尔秤：不用砝码", size: "m", from: 0.5 },
           { kind: "shape", shape: "rect", at: [600, 560], size: [400, 40], color: "#9fb3c8", from: 0.8 },
           { kind: "sprite", icon: "🍎", path: [[600, 490]], size: 100, from: 1.3 },
-          { kind: "sprite", icon: "🧲", path: [[440, 690]], size: 80, from: 2.4 },
-          { kind: "sprite", icon: "🧲", path: [[760, 690]], size: 80, from: 2.8 },
+          { kind: "sprite", icon: "🧲", path: [[360, 690]], size: 80, from: 2.4 },
+          { kind: "sprite", icon: "🧲", path: [[840, 690]], size: 80, from: 2.8 },
           { kind: "arrow", path: [[600, 740], [600, 600]], color: "#7a4fd6", text: "往上托", draw: 0.8, from: 3.8 },
           { kind: "text", at: [600, 830], text: "算出用了多大力", size: "m", color: "#2f7d32", from: 6.8 },
           { kind: "label", at: [640, 490], text: "有多重", side: "right", pos: [860, 430], from: 8.6 }

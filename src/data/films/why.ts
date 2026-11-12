@@ -111,8 +111,8 @@ export const films: readonly Film[] = [
           { kind: "shape", shape: "rect", at: [560, 590], size: [540, 100], color: "#ffd6bf", text: "检查的砝码", from: 2.8 },
           { kind: "shape", shape: "rect", at: [560, 450], size: [380, 100], color: "#bfe3ff", text: "更准的砝码", from: 4.6 },
           { kind: "shape", shape: "rect", at: [560, 310], size: [260, 100], color: "#b9f0c8", text: "国家标准", from: 6.4 },
-          { kind: "arrow", path: [[1000, 760], [1000, 300]], color: "#ff9f43", text: "一级一级", draw: 1.2, from: 7.4 },
-          { kind: "text", at: [600, 140], text: "一级一级往上对", size: "m", from: 8.8 }
+          { kind: "arrow", path: [[1000, 760], [1000, 300]], color: "#ff9f43", draw: 1.2, from: 7.4 },
+          { kind: "text", at: [600, 145], text: "一级一级往上对", size: "m", from: 8.8 }
         ]
       },
       {
@@ -147,11 +147,11 @@ export const films: readonly Film[] = [
       {
         turn: 1, title: "磅和公制", duration: 12,
         cues: [
-          { kind: "shape", shape: "rect", at: [290, 330], size: [300, 160], color: "#ffd6bf", text: "算推力", from: 0.3 },
-          { kind: "label", at: [290, 330], text: "用了英制：磅", side: "top", from: 1.5 },
-          { kind: "shape", shape: "rect", at: [910, 330], size: [300, 160], color: "#bfe3ff", text: "领航", from: 0.9 },
-          { kind: "flow", path: [[450, 330], [750, 330]], icon: "📄", count: 3, speed: 120, size: 14, from: 3, to: 6.5 },
-          { kind: "label", at: [910, 330], text: "以为是公制", side: "top", from: 4.5 },
+          { kind: "shape", shape: "rect", at: [290, 340], size: [300, 160], color: "#ffd6bf", text: "算推力", from: 0.3 },
+          { kind: "label", at: [290, 260], text: "用了英制：磅", side: "top", pos: [290, 195], from: 1.5 },
+          { kind: "shape", shape: "rect", at: [910, 340], size: [300, 160], color: "#bfe3ff", text: "领航", from: 0.9 },
+          { kind: "flow", path: [[450, 340], [750, 340]], icon: "📄", count: 3, speed: 120, size: 14, from: 3, to: 6.5 },
+          { kind: "label", at: [910, 260], text: "以为是公制", side: "top", pos: [910, 195], from: 4.5 },
           { kind: "meter", at: [600, 590], label: "以为的推力", start: 0, end: 0.22, color: "#9fb3c8", from: 6.5 },
           { kind: "meter", at: [600, 690], label: "真正的推力", start: 0, end: 1, color: "#ff9f43", from: 7.2 },
           { kind: "text", at: [600, 820], text: "差了四倍多", size: "m", color: "#e5484d", from: 9.4 }

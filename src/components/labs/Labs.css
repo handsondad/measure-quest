@@ -29,8 +29,13 @@
 .lab-btn.is-main { background: var(--lab); border-color: color-mix(in srgb, var(--lab) 70%, #5d4e37); color: #fff !important; box-shadow: 0 3px 0 color-mix(in srgb, var(--lab) 60%, #5d4e37); }
 .lab-btn.is-quiet { background: transparent; }
 .lab-btn.is-round { width: 44px; padding: 0; }
-.lab-weight { display: inline-flex; align-items: center; gap: 4px; }
-.lab-weight small { min-width: 2em; color: var(--text-secondary); }
+.lab-weight {
+  display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px 3px 4px;
+  border-radius: 999px; background: #fffaf2; border: 1.5px solid var(--border-color);
+}
+.lab-weight .lab-btn { min-height: 36px; padding: 4px 11px; }
+.lab-weight .lab-btn.is-quiet { min-width: 34px; padding: 4px 8px; background: #fff; border-color: var(--border-light); }
+.lab-weight small { min-width: 1.8em; text-align: center; font-weight: 700; color: var(--text-secondary); }
 .lab-say {
   margin: 0; padding: 10px 14px; border-radius: 14px; background: #fff7e6; border: 2px solid #ffd7a8;
   font-weight: 700; line-height: 1.6;
@@ -46,7 +51,7 @@
 
 .lab-plates { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
 .lab-plate {
-  display: grid; justify-items: center; gap: 4px; padding: 8px; border-radius: 50% / 22%;
+  display: grid; justify-items: center; align-content: space-between; gap: 6px; padding: 10px 8px; border-radius: 22px;
   background: #fff; border: 2px solid #ecdcc6; box-shadow: inset 0 -4px 0 #f6eadb;
 }
 .lab-plate.is-rest { border-style: dashed; border-color: #e5484d; background: #fff4f4; }
@@ -112,6 +117,11 @@
 @media (max-width: 620px) {
   .lab-prefix { grid-template-columns: 1fr; }
   .lab-prefix-emoji { font-size: 3rem; }
+  .lab-ladder li:nth-child(2) .lab-ladder-btn { width: 97%; }
+  .lab-ladder li:nth-child(3) .lab-ladder-btn { width: 94%; }
+  .lab-ladder li:nth-child(4) .lab-ladder-btn { width: 91%; }
+  .lab-ladder li:nth-child(5) .lab-ladder-btn { width: 88%; }
+  .lab-ladder li:nth-child(6) .lab-ladder-btn { width: 85%; }
   .lab-power-row { grid-template-columns: auto 1fr; }
   .lab-power-row > .lab-controls, .lab-power-sum { grid-column: 1 / -1; }
   .lab-thermo { grid-template-columns: 1fr; }

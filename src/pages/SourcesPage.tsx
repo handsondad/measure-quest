@@ -2,7 +2,14 @@ import { library } from "../data/library";
 import "./Questions.css";
 import "./Units.css";
 
-export function SourcesPage({ onBack }: { onBack: () => void }) {
+type Props = {
+  onBack: () => void;
+  onUnits: () => void;
+  onTimeline: () => void;
+  onTopic: () => void;
+};
+
+export function SourcesPage({ onBack, onUnits, onTimeline, onTopic }: Props) {
   return (
     <div className="qa units-page">
       <header className="page-top">
@@ -30,6 +37,12 @@ export function SourcesPage({ onBack }: { onBack: () => void }) {
           </section>
         ))}
       </div>
+
+      <nav className="units-next" aria-label="接着看">
+        <button type="button" onClick={onUnits}><span aria-hidden="true">🧩</span><strong>单位大家庭</strong><small>7 块积木、拼出来的单位、词头和老单位</small></button>
+        <button type="button" onClick={onTimeline}><span aria-hidden="true">🗓️</span><strong>测量大事年表</strong><small>从古埃及的肘尺到 2022 年的新词头</small></button>
+        <button type="button" onClick={onTopic}><span aria-hidden="true">💬</span><strong>听小念和爸爸聊单位</strong><small>7 个基本单位、词头是怎么回事</small></button>
+      </nav>
     </div>
   );
 }

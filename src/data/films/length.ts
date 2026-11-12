@@ -92,7 +92,7 @@ export const films: readonly Film[] = [
         turn: 1, title: "光绕地球七圈半", view: "space", duration: 12,
         cues: [
           { kind: "sprite", icon: "🌍", path: [[600, 460]], size: 240, from: 0.2 },
-          { kind: "text", at: [260, 120], text: "永远一样快", size: "m", color: "#ffe08a", from: 0.8 },
+          { kind: "text", at: [320, 150], text: "永远一样快", size: "m", color: "#ffe08a", from: 0.8 },
           { kind: "flow", path: arc([600, 460], 230, 0, 360, 60), color: "#ffe08a", count: 14, speed: 900, size: 9, from: 1.6 },
           { kind: "count", at: [920, 130], label: "光一秒能跑", start: 0, end: 300000, unit: "千米", over: 2.5, from: 3.2 },
           { kind: "text", at: [600, 820], text: "一秒钟：绕地球七圈半", size: "m", color: "#ffe08a", from: 6 }

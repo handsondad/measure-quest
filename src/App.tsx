@@ -40,8 +40,9 @@ const listHash = (topic: TopicId) => `#/topic/${topic}`;
 function App() {
   const { heard, markHeard } = useHeardQuestions();
   const [route, setRoute] = useState(() => parseRoute(window.location.hash));
-  /** 从哪个列表进来的，返回时回到那里而不是一直跳回首页 */
-  const lastList = useRef<TopicId | null>(null);
+  /** 记住从哪一页点进问答或单位档案，返回时回到原处 */
+  const questionBack = useRef<{ hash: string; label?: string } | null>(null);
+  const unitBack = useRef<{ hash: string; label: string }>({ hash: "#/units", label: "← 🧩 单位大家庭" });
 
   useEffect(() => {
     const onHash = () => setRoute(parseRoute(window.location.hash));
@@ -50,8 +51,27 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (route.page === "home") lastList.current = null;
-    if (route.page === "list") lastList.current = route.topic;
+    if (route.page === "home") {
+      questionBack.current = null;
+      unitBack.current = { hash: "#/", label: "← 回到首页" };
+    } else if (route.page === "list") {
+      const topic = topicById(route.topic);
+      const label = topic ? `← ${topic.emoji} ${topic.title}` : undefined;
+      questionBack.current = { hash: listHash(route.topic), label };
+      unitBack.current = { hash: listHash(route.topic), label: label ?? "← 回到列表" };
+    } else if (route.page === "units") {
+      unitBack.current = { hash: "#/units", label: "← 🧩 单位大家庭" };
+    } else if (route.page === "timeline") {
+      questionBack.current = { hash: "#/timeline", label: "← 🗓️ 测量大事年表" };
+    } else if (route.page === "lab") {
+      const lab = labById(route.id);
+      questionBack.current = { hash: `#/lab/${route.id}`, label: lab ? `← ${lab.emoji} ${lab.title}` : "← 回到实验" };
+    } else if (route.page === "unit") {
+      const unit = unitById(route.id);
+      questionBack.current = { hash: `#/unit/${route.id}`, label: unit ? `← ${unit.emoji} ${unit.name}的档案` : "← 回到单位档案" };
+    } else if (route.page === "question") {
+      unitBack.current = { hash: `#/q/${route.id}`, label: "← 回到刚才的问题" };
+    }
     window.scrollTo(0, 0);
   }, [route]);
 
@@ -63,14 +83,15 @@ function App() {
   const openUnits = () => go("#/units");
   const openTimeline = () => go("#/timeline");
   const openSources = () => go("#/sources");
+  const openSystemTopic = () => go(listHash("system"));
 
   if (route.page === "question") {
     const question = questionById(route.id);
     if (question) {
-      const back = lastList.current ?? question.topic;
+      const from = questionBack.current;
       return (
         <QuestionPage key={question.id} question={question} heard={heard} onHeard={markHeard}
-          onBack={() => go(listHash(back))} onOpen={openQuestion} onUnit={openUnit} />
+          backLabel={from?.label} onBack={() => go(from?.hash ?? listHash(question.topic))} onOpen={openQuestion} onUnit={openUnit} />
       );
     }
   }
@@ -84,13 +105,20 @@ function App() {
     return <LabPage key={route.id} id={route.id} onBack={goHome} onOpen={openQuestion} onLab={openLab} />;
   }
   if (route.page === "units") {
-    return <UnitsPage onBack={goHome} onUnit={openUnit} onTimeline={openTimeline} onSources={openSources} onTopic={() => go(listHash("system"))} />;
+    return <UnitsPage onBack={goHome} onUnit={openUnit} onTimeline={openTimeline} onSources={openSources} onTopic={openSystemTopic} />;
   }
   if (route.page === "unit") {
-    return <UnitPage key={route.id} id={route.id} heard={heard} onBack={openUnits} onUnit={openUnit} onOpen={openQuestion} onLab={openLab} />;
+    return (
+      <UnitPage key={route.id} id={route.id} heard={heard} backLabel={unitBack.current.label}
+        onBack={() => go(unitBack.current.hash)} onUnit={openUnit} onOpen={openQuestion} onLab={openLab} />
+    );
   }
-  if (route.page === "timeline") return <TimelinePage heard={heard} onBack={goHome} onOpen={openQuestion} />;
-  if (route.page === "sources") return <SourcesPage onBack={goHome} />;
+  if (route.page === "timeline") {
+    return <TimelinePage heard={heard} onBack={goHome} onOpen={openQuestion} onUnits={openUnits} onSources={openSources} onTopic={openSystemTopic} />;
+  }
+  if (route.page === "sources") {
+    return <SourcesPage onBack={goHome} onUnits={openUnits} onTimeline={openTimeline} onTopic={openSystemTopic} />;
+  }
   return (
     <HomePage heard={heard} onTopic={(id) => go(listHash(id))} onLab={openLab}
       onUnit={openUnit} onUnits={openUnits} onTimeline={openTimeline} onSources={openSources} />

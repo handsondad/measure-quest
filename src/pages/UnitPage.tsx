@@ -10,13 +10,14 @@ import "./Units.css";
 type Props = {
   id: BaseUnitId;
   heard: readonly string[];
+  backLabel?: string;
   onBack: () => void;
   onUnit: (id: BaseUnitId) => void;
   onOpen: (id: string) => void;
   onLab: (id: LabId) => void;
 };
 
-export function UnitPage({ id, heard, onBack, onUnit, onOpen, onLab }: Props) {
+export function UnitPage({ id, heard, backLabel, onBack, onUnit, onOpen, onLab }: Props) {
   const unit = unitById(id);
   if (!unit) return null;
   const topic = topicForUnit(id);
@@ -27,7 +28,7 @@ export function UnitPage({ id, heard, onBack, onUnit, onOpen, onLab }: Props) {
   return (
     <div className="qa units-page unit-page" style={{ "--unit": unit.color } as CSSProperties}>
       <header className="page-top">
-        <button type="button" className="page-back" onClick={onBack}>← 🧩 单位大家庭</button>
+        <button type="button" className="page-back" onClick={onBack}>{backLabel ?? "← 🧩 单位大家庭"}</button>
         <div className="page-heading">
           <span>7 个基本单位 · {unit.quantity}</span>
           <h1>{unit.emoji} {unit.name} <code>{unit.symbol}</code></h1>

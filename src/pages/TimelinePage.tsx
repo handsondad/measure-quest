@@ -7,9 +7,12 @@ type Props = {
   heard: readonly string[];
   onBack: () => void;
   onOpen: (id: string) => void;
+  onUnits: () => void;
+  onSources: () => void;
+  onTopic: () => void;
 };
 
-export function TimelinePage({ heard, onBack, onOpen }: Props) {
+export function TimelinePage({ heard, onBack, onOpen, onUnits, onSources, onTopic }: Props) {
   return (
     <div className="qa units-page">
       <header className="page-top">
@@ -55,6 +58,12 @@ export function TimelinePage({ heard, onBack, onOpen }: Props) {
           ))}
         </ul>
       </details>
+
+      <nav className="units-next" aria-label="接着看">
+        <button type="button" onClick={onUnits}><span aria-hidden="true">🧩</span><strong>单位大家庭</strong><small>7 块积木、拼出来的单位、词头和老单位</small></button>
+        <button type="button" onClick={onTopic}><span aria-hidden="true">💬</span><strong>听小念和爸爸聊单位</strong><small>7 个基本单位、词头是怎么回事</small></button>
+        <button type="button" onClick={onSources}><span aria-hidden="true">📚</span><strong>资料库</strong><small>计量机构、博物馆、好读的文章</small></button>
+      </nav>
     </div>
   );
 }

@@ -91,7 +91,7 @@ function Label({ cue, ctx }: { cue: Extract<Cue, { kind: "label" }>; ctx: Ctx })
     <g opacity={alpha}>
       <line x1={ax} y1={ay} x2={px} y2={py} stroke={color} strokeWidth={3 * k} strokeDasharray={`${8 * k} ${6 * k}`} />
       <circle cx={ax} cy={ay} r={8 * k} fill="#fff" stroke={color} strokeWidth={4 * k} />
-      <g transform={`translate(${px} ${py}) scale(${Math.max(pop, 0.01)})`}>
+      <g className="film-on-light" transform={`translate(${px} ${py}) scale(${Math.max(pop, 0.01)})`}>
         <rect x={-width / 2} y={-height / 2} width={width} height={height} rx={height / 2} fill="#fff" stroke={color} strokeWidth={3 * k} />
         <text className="film-text" fontSize={size} textAnchor="middle" dominantBaseline="central" fill={color}>{cue.text}</text>
       </g>
@@ -162,13 +162,25 @@ function Arrow({ cue, ctx }: { cue: Extract<Cue, { kind: "arrow" }>; ctx: Ctx })
   const head = 26 * k;
   const wing = (turn: number): Vec => [tip[0] - head * Math.cos(angle + turn), tip[1] - head * Math.sin(angle + turn)];
   const mid = pointAlong(points, 0.5);
+  const fullAngle = Math.atan2(points[points.length - 1][1] - points[0][1], points[points.length - 1][0] - points[0][0]);
+  const steep = Math.abs(Math.cos(fullAngle)) < 0.55;
+  const onLeft = mid[0] > 900;
   return (
     <g opacity={ctx.alpha}>
       <polyline points={polyline(drawn)} fill="none" stroke="#fff" strokeWidth={15 * k} strokeLinecap="round" strokeLinejoin="round" />
       <polyline points={polyline(drawn)} fill="none" stroke={color} strokeWidth={8 * k} strokeLinecap="round" strokeLinejoin="round" />
       {progress > 0.05 && <polygon points={polyline([tip, wing(0.5), wing(-0.5)])} fill={color} stroke="#fff" strokeWidth={3 * k} strokeLinejoin="round" />}
       {cue.text && progress > 0.6 && (
-        <text className="film-text" x={mid[0]} y={mid[1] - 30 * ctx.ui} fontSize={28 * ctx.ui} textAnchor="middle" fill={color} opacity={smooth((progress - 0.6) / 0.4)}>{cue.text}</text>
+        <text
+          className="film-text"
+          x={steep ? mid[0] + (onLeft ? -22 * k : 22 * k) : mid[0]}
+          y={steep ? mid[1] : mid[1] - 30 * ctx.ui}
+          fontSize={28 * ctx.ui}
+          textAnchor={steep ? (onLeft ? "end" : "start") : "middle"}
+          dominantBaseline={steep ? "central" : undefined}
+          fill={color}
+          opacity={smooth((progress - 0.6) / 0.4)}
+        >{cue.text}</text>
       )}
     </g>
   );
@@ -218,7 +230,7 @@ function Shape({ cue, ctx }: { cue: Extract<Cue, { kind: "shape" }>; ctx: Ctx })
     cue.shape === "circle" ? <ellipse cx={0} cy={0} rx={w / 2} ry={h / 2} fill={cue.color} {...stroke} />
       : <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={cue.shape === "pill" ? h / 2 : Math.min(18, h / 4)} fill={cue.color} {...stroke} />;
   return (
-    <g transform={`translate(${x} ${y}) rotate(${rotate}) scale(${scale})`} opacity={ctx.alpha}>
+    <g className={cue.color === "none" ? undefined : "film-on-light"} transform={`translate(${x} ${y}) rotate(${rotate}) scale(${scale})`} opacity={ctx.alpha}>
       {body}
       {cue.text && <text className="film-text" fontSize={Math.min(30, h * 0.4, (w * 1.6) / [...cue.text].length)} textAnchor="middle" dominantBaseline="central" fill={ink}>{cue.text}</text>}
     </g>
@@ -277,8 +289,10 @@ function Ruler({ cue, ctx }: { cue: Extract<Cue, { kind: "ruler" }>; ctx: Ctx })
   }
   return (
     <g opacity={ctx.alpha} transform={`translate(${x} ${y})${cue.vertical ? " rotate(90)" : ""}`}>
-      <rect x={-10} y={0} width={grown + 20} height={height} rx={10} fill={color} stroke="#c9962c" strokeWidth={4} />
-      {marks}
+      <g className="film-on-light">
+        <rect x={-10} y={0} width={grown + 20} height={height} rx={10} fill={color} stroke="#c9962c" strokeWidth={4} />
+        {marks}
+      </g>
       {cue.caption && (
         <g transform={cue.vertical ? `translate(${cue.length / 2} ${-40 * ctx.ui}) rotate(-90)` : `translate(${cue.length / 2} ${height + 40 * ctx.ui})`}>
           <Caption text={cue.caption} y={0} ctx={ctx} />
@@ -334,7 +348,7 @@ function Clock({ cue, ctx }: { cue: Extract<Cue, { kind: "clock" }>; ctx: Ctx })
   );
   return (
     <g opacity={ctx.alpha} transform={`translate(${x} ${y})`}>
-      <g transform={`scale(${scale})`}>
+      <g className="film-on-light" transform={`scale(${scale})`}>
         <circle r={r} fill="#fffdf6" stroke="#ff9f43" strokeWidth={r * 0.08} />
         {Array.from({ length: 60 }, (_, i) => {
           const big = i % 5 === 0;
@@ -402,7 +416,7 @@ function Count({ cue, ctx }: { cue: Extract<Cue, { kind: "count" }>; ctx: Ctx })
   const { k } = ctx;
   const digits = String(Math.round(Math.max(Math.abs(cue.start), Math.abs(cue.end)))).length;
   return (
-    <g opacity={ctx.alpha} transform={`translate(${x} ${y})`}>
+    <g className="film-on-light" opacity={ctx.alpha} transform={`translate(${x} ${y})`}>
       <rect x={-150 * k} y={-70 * k} width={300 * k} height={140 * k} rx={28 * k} fill="#fff" stroke={ink} strokeWidth={3 * k} />
       <text className="film-text" y={-34 * k} fontSize={Math.min(26 * captionScale(ctx), (270 * k) / [...cue.label].length)} textAnchor="middle" fill="#7a6a55">{cue.label}</text>
       <text className="film-text film-big" y={22 * k} fontSize={Math.min(58, 400 / (digits + (cue.unit ? 1.5 : 0))) * k} textAnchor="middle" fill={ink}>

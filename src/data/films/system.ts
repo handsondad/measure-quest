@@ -122,7 +122,7 @@ export const films: readonly Film[] = [
           { kind: "sprite", icon: "💡", path: [[250, 400]], size: 110, from: 1.5 },
           { kind: "label", at: [250, 450], text: "米：光速", side: "bottom", pos: [250, 560], from: 2 },
           { kind: "sprite", icon: "⚛️", path: [[600, 400]], size: 110, from: 3.5 },
-          { kind: "label", at: [600, 450], text: "秒：铯原子", side: "bottom", pos: [600, 560], from: 4 },
+          { kind: "label", at: [600, 345], text: "秒：铯原子", side: "top", pos: [600, 250], from: 4 },
           { kind: "sprite", icon: "🧲", path: [[950, 400]], size: 110, from: 5.5 },
           { kind: "label", at: [950, 450], text: "千克：普朗克常数", side: "bottom", pos: [950, 560], from: 6 },
           { kind: "text", at: [600, 790], text: "在火星也能做出一样的", size: "m", color: "#ffe08a", from: 8.4 }

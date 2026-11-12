@@ -43,12 +43,12 @@ export const films: readonly Film[] = [
       {
         turn: 3, title: "十进制时间", duration: 11,
         cues: [
-          { kind: "text", at: [600, 100], text: "两百多年前的法国", size: "m", from: 0.4 },
-          { kind: "clock", at: [330, 420], size: 300, speed: 30, caption: "老钟表", from: 0.8 },
-          { kind: "shape", shape: "circle", at: [870, 380], size: [280, 280], color: "#fff3d6", text: "十进制", outline: true, from: 1.8 },
-          { kind: "text", at: [870, 580], text: "一天 10 小时", size: "s", from: 2.4, to: 6.2 },
-          { kind: "text", at: [870, 640], text: "一小时 100 分", size: "s", from: 3.2, to: 6.2 },
-          { kind: "text", at: [870, 700], text: "一分 100 秒", size: "s", from: 4, to: 6.2 },
+          { kind: "text", at: [600, 130], text: "两百多年前的法国", size: "m", from: 0.4 },
+          { kind: "clock", at: [330, 360], size: 280, speed: 30, caption: "老钟表", from: 0.8 },
+          { kind: "shape", shape: "circle", at: [870, 350], size: [260, 260], color: "#fff3d6", text: "十进制", outline: true, from: 1.8 },
+          { kind: "text", at: [870, 540], text: "一天 10 小时", size: "s", from: 2.4, to: 6.1 },
+          { kind: "text", at: [870, 605], text: "一小时 100 分", size: "s", from: 3.2, to: 6.1 },
+          { kind: "text", at: [870, 670], text: "一分 100 秒", size: "s", from: 4, to: 6.1 },
           { kind: "myth", wrong: "十进制时间更好用", right: "大家用不惯，没多久就放弃", from: 6.4 }
         ]
       },

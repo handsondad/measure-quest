@@ -25,7 +25,7 @@ export const films: readonly Film[] = [
           { kind: "sprite", icon: "🤴", path: [[480, 380]], size: 240, from: 0.3 },
           { kind: "line", path: [[500, 330], [900, 330]], color: "#ff9f43", width: 5, dashed: true, draw: 1, from: 1.6 },
           { kind: "label", at: [760, 330], text: "1 码？鼻尖到拇指", side: "top", pos: [820, 210], from: 2.2 },
-          { kind: "label", at: [480, 500], text: "1 英尺？国王的脚", side: "bottom", pos: [480, 620], from: 3.6 },
+          { kind: "label", at: [480, 500], text: "1 英尺？国王的脚", side: "bottom", pos: [480, 620], from: 3.6, to: 5.9 },
           { kind: "myth", wrong: "1 英尺就是国王的脚", right: "只是传说，没有真凭实据", from: 6.2 }
         ]
       },
@@ -69,7 +69,7 @@ export const films: readonly Film[] = [
         turn: 0, title: "四种“里”排排队", view: "grid", duration: 13,
         cues: [
           { kind: "shape", shape: "rect", at: [mid(500), 200], size: [bar(500), 70], color: "#ffd6bf", text: "里", from: 0.4 },
-          { kind: "label", at: [150 + bar(500), 200], text: "500 米", side: "right", pos: [520, 200], from: 1 },
+          { kind: "label", at: [150 + bar(500), 200], text: "500 米", side: "right", pos: [580, 200], from: 1 },
           { kind: "shape", shape: "rect", at: [mid(1000), 340], size: [bar(1000), 70], color: "#bfe3ff", text: "公里", from: 2.4 },
           { kind: "shape", shape: "rect", at: [mid(1609), 480], size: [bar(1609), 70], color: "#e9dcff", text: "英里", from: 4 },
           { kind: "label", at: [150 + bar(1609), 480], text: "约 1.6 公里", side: "right", pos: [1050, 400], from: 4.6 },
