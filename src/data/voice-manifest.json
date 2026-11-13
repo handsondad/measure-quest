@@ -58,6 +58,54 @@
    "hash": "c0b9bff1693c",
    "seconds": 14.64
   },
+  "archimedes-volume/0-dad": {
+   "hash": "5b8ea4ee2944",
+   "seconds": 23.26
+  },
+  "archimedes-volume/0-nian": {
+   "hash": "8f9cc8dd109b",
+   "seconds": 8.09
+  },
+  "archimedes-volume/1-dad": {
+   "hash": "ad80fbde2a76",
+   "seconds": 20.86
+  },
+  "archimedes-volume/1-nian": {
+   "hash": "f7b0678e4b0e",
+   "seconds": 4.2
+  },
+  "archimedes-volume/2-dad": {
+   "hash": "36a6d5250d38",
+   "seconds": 23.3
+  },
+  "archimedes-volume/2-nian": {
+   "hash": "c1971a68b9b6",
+   "seconds": 4.32
+  },
+  "archimedes-volume/3-dad": {
+   "hash": "c387999c04a7",
+   "seconds": 23.02
+  },
+  "archimedes-volume/3-nian": {
+   "hash": "cdeb4a34ec2c",
+   "seconds": 5.81
+  },
+  "archimedes-volume/4-dad": {
+   "hash": "d548da0ee900",
+   "seconds": 22.92
+  },
+  "archimedes-volume/4-nian": {
+   "hash": "c1ad2896442c",
+   "seconds": 7.39
+  },
+  "archimedes-volume/5-dad": {
+   "hash": "65b31c83c36c",
+   "seconds": 7.44
+  },
+  "archimedes-volume/5-nian": {
+   "hash": "9e602924692d",
+   "seconds": 17.38
+  },
   "atomic-second/0-dad": {
    "hash": "c6e3fa9fa6b9",
    "seconds": 19.3
@@ -250,6 +298,54 @@
    "hash": "d04e41c71221",
    "seconds": 18.46
   },
+  "blood-sugar/0-dad": {
+   "hash": "2f61818646f5",
+   "seconds": 21.67
+  },
+  "blood-sugar/0-nian": {
+   "hash": "e6af03098076",
+   "seconds": 8.64
+  },
+  "blood-sugar/1-dad": {
+   "hash": "468026d4f6dd",
+   "seconds": 21.38
+  },
+  "blood-sugar/1-nian": {
+   "hash": "da23dd2864bf",
+   "seconds": 6.55
+  },
+  "blood-sugar/2-dad": {
+   "hash": "4774ad85c942",
+   "seconds": 21.14
+  },
+  "blood-sugar/2-nian": {
+   "hash": "f8f789a1712e",
+   "seconds": 6.22
+  },
+  "blood-sugar/3-dad": {
+   "hash": "39eb13951e0b",
+   "seconds": 25.56
+  },
+  "blood-sugar/3-nian": {
+   "hash": "ad9d6c5b50a6",
+   "seconds": 5.02
+  },
+  "blood-sugar/4-dad": {
+   "hash": "3a619e1e0af6",
+   "seconds": 20.06
+  },
+  "blood-sugar/4-nian": {
+   "hash": "d141f7df0ff6",
+   "seconds": 7.9
+  },
+  "blood-sugar/5-dad": {
+   "hash": "1e9a0f30e85f",
+   "seconds": 7.3
+  },
+  "blood-sugar/5-nian": {
+   "hash": "82403c2f689c",
+   "seconds": 16.25
+  },
   "candela/0-dad": {
    "hash": "443a01fa0818",
    "seconds": 19.82
@@ -298,6 +394,102 @@
    "hash": "e32b4e03d0e8",
    "seconds": 17.23
   },
+  "carat/0-dad": {
+   "hash": "512607f11d10",
+   "seconds": 18.22
+  },
+  "carat/0-nian": {
+   "hash": "ae30ea69a241",
+   "seconds": 7.61
+  },
+  "carat/1-dad": {
+   "hash": "3f52027b53b0",
+   "seconds": 20.3
+  },
+  "carat/1-nian": {
+   "hash": "0b6b624e351f",
+   "seconds": 6.14
+  },
+  "carat/2-dad": {
+   "hash": "b9fed0627db2",
+   "seconds": 20.38
+  },
+  "carat/2-nian": {
+   "hash": "c8789084bd45",
+   "seconds": 5.26
+  },
+  "carat/3-dad": {
+   "hash": "aad36211da78",
+   "seconds": 20.74
+  },
+  "carat/3-nian": {
+   "hash": "294da5aeabcd",
+   "seconds": 4.34
+  },
+  "carat/4-dad": {
+   "hash": "fd2683adddb6",
+   "seconds": 24.84
+  },
+  "carat/4-nian": {
+   "hash": "4e3847e51745",
+   "seconds": 6.41
+  },
+  "carat/5-dad": {
+   "hash": "5a5e01978d48",
+   "seconds": 6.48
+  },
+  "carat/5-nian": {
+   "hash": "d7c0dc29b73b",
+   "seconds": 15.84
+  },
+  "decibel/0-dad": {
+   "hash": "5bba0be4fd7f",
+   "seconds": 17.04
+  },
+  "decibel/0-nian": {
+   "hash": "a8847a7d0967",
+   "seconds": 8.69
+  },
+  "decibel/1-dad": {
+   "hash": "00b5af105fcc",
+   "seconds": 20.21
+  },
+  "decibel/1-nian": {
+   "hash": "bdaea86c827b",
+   "seconds": 4.75
+  },
+  "decibel/2-dad": {
+   "hash": "9221c562d1e6",
+   "seconds": 21
+  },
+  "decibel/2-nian": {
+   "hash": "463e4e1539d0",
+   "seconds": 7.46
+  },
+  "decibel/3-dad": {
+   "hash": "78a6bdc2c1a6",
+   "seconds": 18.12
+  },
+  "decibel/3-nian": {
+   "hash": "8d79417594aa",
+   "seconds": 5.23
+  },
+  "decibel/4-dad": {
+   "hash": "7588cabb5da7",
+   "seconds": 20.11
+  },
+  "decibel/4-nian": {
+   "hash": "afe195caf4b8",
+   "seconds": 5.45
+  },
+  "decibel/5-dad": {
+   "hash": "99abd0d506fd",
+   "seconds": 10.08
+  },
+  "decibel/5-nian": {
+   "hash": "cef4e815224f",
+   "seconds": 14.83
+  },
   "du-liang-heng/0-dad": {
    "hash": "5d68833d7cf0",
    "seconds": 16.8
@@ -345,6 +537,102 @@
   "du-liang-heng/5-nian": {
    "hash": "f422cd79c4ab",
    "seconds": 16.46
+  },
+  "earth-checkup/0-dad": {
+   "hash": "dd8cc1a5bb8a",
+   "seconds": 22.1
+  },
+  "earth-checkup/0-nian": {
+   "hash": "4b32a760168c",
+   "seconds": 8.28
+  },
+  "earth-checkup/1-dad": {
+   "hash": "113baa03f191",
+   "seconds": 25.22
+  },
+  "earth-checkup/1-nian": {
+   "hash": "2bef389ba4ca",
+   "seconds": 6
+  },
+  "earth-checkup/2-dad": {
+   "hash": "3b4783bd7b1b",
+   "seconds": 19.06
+  },
+  "earth-checkup/2-nian": {
+   "hash": "561b549c8103",
+   "seconds": 5.93
+  },
+  "earth-checkup/3-dad": {
+   "hash": "fd24693fd869",
+   "seconds": 19.66
+  },
+  "earth-checkup/3-nian": {
+   "hash": "bf0886758ec7",
+   "seconds": 5.35
+  },
+  "earth-checkup/4-dad": {
+   "hash": "8d4e11cda529",
+   "seconds": 24.07
+  },
+  "earth-checkup/4-nian": {
+   "hash": "619a97aae617",
+   "seconds": 5.5
+  },
+  "earth-checkup/5-dad": {
+   "hash": "36d21dd165c9",
+   "seconds": 9.1
+  },
+  "earth-checkup/5-nian": {
+   "hash": "3bf7e7ef16bd",
+   "seconds": 16.97
+  },
+  "eight-chi/0-dad": {
+   "hash": "e67a73bbe450",
+   "seconds": 21.84
+  },
+  "eight-chi/0-nian": {
+   "hash": "8940c6a8246a",
+   "seconds": 9.22
+  },
+  "eight-chi/1-dad": {
+   "hash": "e62720ced383",
+   "seconds": 21.22
+  },
+  "eight-chi/1-nian": {
+   "hash": "58c96c73d5b0",
+   "seconds": 5.83
+  },
+  "eight-chi/2-dad": {
+   "hash": "c2428ed4f49d",
+   "seconds": 22.06
+  },
+  "eight-chi/2-nian": {
+   "hash": "f981a9a15e57",
+   "seconds": 4.73
+  },
+  "eight-chi/3-dad": {
+   "hash": "eccbb083121a",
+   "seconds": 21.12
+  },
+  "eight-chi/3-nian": {
+   "hash": "a0e178b8e30d",
+   "seconds": 5.74
+  },
+  "eight-chi/4-dad": {
+   "hash": "92d4d7a83809",
+   "seconds": 19.25
+  },
+  "eight-chi/4-nian": {
+   "hash": "809628796cc6",
+   "seconds": 4.8
+  },
+  "eight-chi/5-dad": {
+   "hash": "393037a495f4",
+   "seconds": 9.19
+  },
+  "eight-chi/5-nian": {
+   "hash": "ba584165deb9",
+   "seconds": 17.5
   },
   "fahrenheit/0-dad": {
    "hash": "300a1f905655",
@@ -778,6 +1066,102 @@
    "hash": "91b02995ed9c",
    "seconds": 15.43
   },
+  "ligo/0-dad": {
+   "hash": "4a99f3dbc288",
+   "seconds": 23.28
+  },
+  "ligo/0-nian": {
+   "hash": "fbd9081ad8e5",
+   "seconds": 8.57
+  },
+  "ligo/1-dad": {
+   "hash": "6be6996abae2",
+   "seconds": 19.39
+  },
+  "ligo/1-nian": {
+   "hash": "50f90d1dcfaa",
+   "seconds": 5.76
+  },
+  "ligo/2-dad": {
+   "hash": "28a32001890c",
+   "seconds": 25.2
+  },
+  "ligo/2-nian": {
+   "hash": "8d388ab0f498",
+   "seconds": 6.02
+  },
+  "ligo/3-dad": {
+   "hash": "a390368f0e03",
+   "seconds": 22.42
+  },
+  "ligo/3-nian": {
+   "hash": "b7fe71598d68",
+   "seconds": 5.26
+  },
+  "ligo/4-dad": {
+   "hash": "0ec4a2ba8af5",
+   "seconds": 23.93
+  },
+  "ligo/4-nian": {
+   "hash": "47d7d6c6d380",
+   "seconds": 8.93
+  },
+  "ligo/5-dad": {
+   "hash": "e0a8d7ec587d",
+   "seconds": 10.78
+  },
+  "ligo/5-nian": {
+   "hash": "288a95f1eced",
+   "seconds": 17.18
+  },
+  "lumen/0-dad": {
+   "hash": "0f37fb9ad70e",
+   "seconds": 19.97
+  },
+  "lumen/0-nian": {
+   "hash": "8a97bb380b50",
+   "seconds": 8.3
+  },
+  "lumen/1-dad": {
+   "hash": "0cccc460b925",
+   "seconds": 19.75
+  },
+  "lumen/1-nian": {
+   "hash": "a0c024d9b446",
+   "seconds": 6.17
+  },
+  "lumen/2-dad": {
+   "hash": "88b5a61d3ae8",
+   "seconds": 18.89
+  },
+  "lumen/2-nian": {
+   "hash": "c8a75c3746c4",
+   "seconds": 8.76
+  },
+  "lumen/3-dad": {
+   "hash": "7ef35d477fc4",
+   "seconds": 20.69
+  },
+  "lumen/3-nian": {
+   "hash": "6131ac61b647",
+   "seconds": 7.87
+  },
+  "lumen/4-dad": {
+   "hash": "c6f5ce4edde8",
+   "seconds": 21.89
+  },
+  "lumen/4-nian": {
+   "hash": "132356a79f5d",
+   "seconds": 6.12
+  },
+  "lumen/5-dad": {
+   "hash": "f4d89d3af43f",
+   "seconds": 7.03
+  },
+  "lumen/5-nian": {
+   "hash": "5798f5249c53",
+   "seconds": 16.18
+  },
   "lux/0-dad": {
    "hash": "816127a7ea07",
    "seconds": 21.19
@@ -1114,6 +1498,54 @@
    "hash": "078aa68c5d8a",
    "seconds": 15.86
   },
+  "optical-clock/0-dad": {
+   "hash": "548a0948e5db",
+   "seconds": 17.16
+  },
+  "optical-clock/0-nian": {
+   "hash": "efc4d2f5538a",
+   "seconds": 7.2
+  },
+  "optical-clock/1-dad": {
+   "hash": "926e6a6c82e6",
+   "seconds": 22.37
+  },
+  "optical-clock/1-nian": {
+   "hash": "c19ed5009515",
+   "seconds": 6.17
+  },
+  "optical-clock/2-dad": {
+   "hash": "a05195273f42",
+   "seconds": 20.64
+  },
+  "optical-clock/2-nian": {
+   "hash": "cd1fc2efc1aa",
+   "seconds": 5.18
+  },
+  "optical-clock/3-dad": {
+   "hash": "c2f76a745844",
+   "seconds": 23.59
+  },
+  "optical-clock/3-nian": {
+   "hash": "c896816b9cbf",
+   "seconds": 5.09
+  },
+  "optical-clock/4-dad": {
+   "hash": "61ea43fd42d9",
+   "seconds": 21.07
+  },
+  "optical-clock/4-nian": {
+   "hash": "1f938bc97222",
+   "seconds": 5.57
+  },
+  "optical-clock/5-dad": {
+   "hash": "8d00875c2def",
+   "seconds": 9.65
+  },
+  "optical-clock/5-nian": {
+   "hash": "ad38da8ea092",
+   "seconds": 16.37
+  },
   "prefixes/0-dad": {
    "hash": "0c6bb6e79be9",
    "seconds": 19.68
@@ -1209,6 +1641,54 @@
   "qin-unify/5-nian": {
    "hash": "5b0612ba5132",
    "seconds": 18.29
+  },
+  "quarter-hour/0-dad": {
+   "hash": "ad181629f32e",
+   "seconds": 20.3
+  },
+  "quarter-hour/0-nian": {
+   "hash": "8010dae567c3",
+   "seconds": 8.04
+  },
+  "quarter-hour/1-dad": {
+   "hash": "261f2e1874ff",
+   "seconds": 21.94
+  },
+  "quarter-hour/1-nian": {
+   "hash": "51a1e93b1455",
+   "seconds": 3.89
+  },
+  "quarter-hour/2-dad": {
+   "hash": "667d298829f0",
+   "seconds": 23.83
+  },
+  "quarter-hour/2-nian": {
+   "hash": "c350c7141c60",
+   "seconds": 5.04
+  },
+  "quarter-hour/3-dad": {
+   "hash": "8c17507ef980",
+   "seconds": 18.96
+  },
+  "quarter-hour/3-nian": {
+   "hash": "4df0bcb4f54c",
+   "seconds": 6.05
+  },
+  "quarter-hour/4-dad": {
+   "hash": "9299d70eae96",
+   "seconds": 23.93
+  },
+  "quarter-hour/4-nian": {
+   "hash": "afe6dba2d7f6",
+   "seconds": 5.95
+  },
+  "quarter-hour/5-dad": {
+   "hash": "c3ebcb79c60c",
+   "seconds": 7.78
+  },
+  "quarter-hour/5-nian": {
+   "hash": "6aa7ea305371",
+   "seconds": 15.14
   },
   "seven-units/0-dad": {
    "hash": "d19318966982",
@@ -1401,6 +1881,54 @@
   "thermometer/5-nian": {
    "hash": "6fb65116d621",
    "seconds": 17.23
+  },
+  "volt/0-dad": {
+   "hash": "90727af6959f",
+   "seconds": 21.6
+  },
+  "volt/0-nian": {
+   "hash": "46abe35cef79",
+   "seconds": 8.62
+  },
+  "volt/1-dad": {
+   "hash": "73a4288024c3",
+   "seconds": 24.02
+  },
+  "volt/1-nian": {
+   "hash": "6e31dc5027fe",
+   "seconds": 4.08
+  },
+  "volt/2-dad": {
+   "hash": "abe3dce2ded9",
+   "seconds": 21.58
+  },
+  "volt/2-nian": {
+   "hash": "d01ee8c05dbd",
+   "seconds": 6.1
+  },
+  "volt/3-dad": {
+   "hash": "3f28d480c830",
+   "seconds": 21.98
+  },
+  "volt/3-nian": {
+   "hash": "e9df6c4762c8",
+   "seconds": 8.78
+  },
+  "volt/4-dad": {
+   "hash": "d9e58708d240",
+   "seconds": 23.18
+  },
+  "volt/4-nian": {
+   "hash": "42826d1c1615",
+   "seconds": 6.02
+  },
+  "volt/5-dad": {
+   "hash": "41db04f32fbb",
+   "seconds": 7.56
+  },
+  "volt/5-nian": {
+   "hash": "fa1340aa5fd7",
+   "seconds": 17.74
   },
   "what-is-meter/0-dad": {
    "hash": "5b1384c512ed",

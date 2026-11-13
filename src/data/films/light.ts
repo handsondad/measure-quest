@@ -123,5 +123,63 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "lumen",
+    scenes: [
+      {
+        turn: 0, title: "流明和瓦不一样", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "💡", path: [[300, 330]], size: 150, from: 0.3 },
+          { kind: "label", at: [300, 420], text: "LED 灯：9 瓦", side: "bottom", pos: [300, 530], from: 1 },
+          { kind: "sprite", icon: "🔆", path: [[900, 330]], size: 150, from: 2.4 },
+          { kind: "label", at: [900, 420], text: "老灯泡：60 瓦", side: "bottom", pos: [900, 530], from: 3 },
+          { kind: "text", at: [600, 690], text: "都能发出 800 流明", size: "m", color: "#c27c0e", from: 5.2 },
+          { kind: "text", at: [600, 810], text: "亮不亮看流明，不看瓦", size: "m", color: "#2f7d32", from: 7.6 }
+        ]
+      },
+      {
+        turn: 1, title: "老灯泡像小火炉", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "白炽灯：烧热钨丝发光", size: "m", from: 0.3 },
+          { kind: "meter", at: [360, 380], label: "变成热气", start: 0, end: 0.9, color: "#e5484d", from: 1.4 },
+          { kind: "meter", at: [840, 380], label: "变成亮光", start: 0, end: 0.1, color: "#ffcf3f", from: 2.4 },
+          { kind: "text", at: [600, 580], text: "十分之九都变成热", size: "m", color: "#e5484d", from: 4.6 },
+          { kind: "text", at: [600, 760], text: "9 瓦顶老灯泡 60 瓦", size: "m", color: "#2f7d32", from: 7.4 }
+        ]
+      },
+      {
+        turn: 2, title: "光的三兄弟", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🕯️", path: [[220, 340]], size: 130, from: 0.3 },
+          { kind: "label", at: [220, 420], text: "坎德拉：一个方向", side: "bottom", pos: [220, 530], from: 1 },
+          { kind: "sprite", icon: "💡", path: [[600, 340]], size: 130, from: 2.6 },
+          { kind: "label", at: [600, 270], text: "流明：四面八方总光", side: "top", pos: [600, 185], from: 3.2 },
+          { kind: "sprite", icon: "📖", path: [[980, 340]], size: 130, from: 4.8 },
+          { kind: "label", at: [980, 420], text: "勒克斯：落到桌上", side: "bottom", pos: [960, 530], from: 5.4 },
+          { kind: "text", at: [600, 780], text: "1流明铺1平方米=1勒克斯", size: "m", color: "#225dac", from: 8 }
+        ]
+      },
+      {
+        turn: 3, title: "4000K 是光的颜色", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 120], text: "色温：光偏黄还是偏白", size: "m", from: 0.3 },
+          { kind: "shape", shape: "circle", at: [250, 430], size: [170, 170], color: "#ffc069", text: "2700K", from: 1.4 },
+          { kind: "label", at: [250, 520], text: "暖黄光", side: "bottom", pos: [250, 620], from: 2 },
+          { kind: "shape", shape: "circle", at: [600, 430], size: [170, 170], color: "#fff6dc", text: "4000K", from: 3.2 },
+          { kind: "label", at: [600, 340], text: "自然白光", side: "top", pos: [600, 240], from: 3.8 },
+          { kind: "shape", shape: "circle", at: [950, 430], size: [170, 170], color: "#d6ecff", text: "6000K", from: 5 },
+          { kind: "label", at: [950, 520], text: "偏蓝冷白光", side: "bottom", pos: [950, 620], from: 5.6 }
+        ]
+      },
+      {
+        turn: 4, title: "不是真有四千度", duration: 11,
+        cues: [
+          { kind: "sprite", icon: "💡", path: [[360, 330]], size: 150, from: 0.3 },
+          { kind: "label", at: [420, 330], text: "看书选 4000K 左右", side: "right", pos: [760, 330], from: 1.4 },
+          { kind: "myth", wrong: "4000K 的灯泡有四千度烫", right: "只是借开尔文形容光色有多白", from: 4.4 }
+        ]
+      }
+    ]
   }
 ];

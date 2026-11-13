@@ -130,17 +130,20 @@ export const baseUnits: readonly BaseUnit[] = [
     ],
     tools: [
       { icon: "☀️", name: "日晷", note: "看太阳的影子" },
-      { icon: "⏳", name: "沙漏", note: "沙子漏完算一段" },
+      { icon: "🏺", name: "铜壶滴漏", note: "水涨箭浮，阴天半夜也能看" },
       { icon: "⌚", name: "石英表", note: "小水晶片每秒振 32768 次" },
-      { icon: "⚛️", name: "原子钟", note: "卫星和授时中心用它" }
+      { icon: "⚛️", name: "铯原子钟", note: "卫星和授时中心用它" },
+      { icon: "🔬", name: "光钟", note: "比铯原子钟还准上百倍" }
     ],
     history: [
       { year: "约前2000", text: "古巴比伦人六十个六十个地数，留下了 60 秒、60 分" },
+      { year: "1645", text: "清朝把一天 100 刻改为 96 刻，一刻钟正好 15 分钟" },
       { year: "很久以来", text: "一秒是一天的 1/86400，看地球转" },
       { year: "1960", text: "改看地球绕太阳转一圈，比自转稳" },
       { year: "1967", text: "改用铯原子：摆动 9192631770 次是 1 秒" },
       { year: "1972", text: "开始加“闰秒”，让原子钟跟上地球" },
-      { year: "2022", text: "各国商定：最晚 2035 年起不再加闰秒" }
+      { year: "2022", text: "各国商定：最晚 2035 年起不再加闰秒" },
+      { year: "2030前后", text: "计划用更准的“光钟”给 1 秒换新定义" }
     ],
     definition: "固定铯-133 原子在未受干扰的基态超精细跃迁频率 ΔνCs 的数值为 9 192 631 770 Hz（Hz = s⁻¹），秒由此确定。",
     constant: "铯-133 超精细跃迁频率 ΔνCs = 9 192 631 770 Hz",
@@ -301,8 +304,10 @@ export type DerivedUnit = {
 
 export const derivedUnits: readonly DerivedUnit[] = [
   { name: "平方米", symbol: "m²", quantity: "面积", emoji: "🟦", recipe: "米 × 米", uses: ["metre"], example: "教室、房子有多大" },
+  { name: "立方米", symbol: "m³", quantity: "体积", emoji: "📦", recipe: "米 × 米 × 米", uses: ["metre"], example: "房间和集装箱占多大地方" },
   { name: "升", symbol: "L", quantity: "容积", emoji: "🥛", recipe: "1 升 = 10 厘米 × 10 厘米 × 10 厘米", uses: ["metre"], example: "一瓶水、一桶油", legalOnly: true },
   { name: "米每秒", symbol: "m/s", quantity: "速度", emoji: "🏃", recipe: "米 ÷ 秒", uses: ["metre", "second"], example: "跑得有多快" },
+  { name: "千克每立方米", symbol: "kg/m³", quantity: "密度", emoji: "👑", recipe: "千克 ÷ 立方米", uses: ["kilogram", "metre"], example: "金子为什么比银子紧实" },
   { name: "赫兹", symbol: "Hz", quantity: "一秒几次", emoji: "🎵", recipe: "1 ÷ 秒", uses: ["second"], example: "声音的高低、Wi-Fi 的信号" },
   { name: "牛顿", symbol: "N", quantity: "力", emoji: "🍎", recipe: "千克 × 米 ÷ 秒 ÷ 秒", uses: ["kilogram", "metre", "second"], example: "推、拉，地球拉你往下的重力" },
   { name: "帕斯卡", symbol: "Pa", quantity: "压强", emoji: "🎈", recipe: "牛顿 ÷ 平方米", uses: ["kilogram", "metre", "second"], example: "轮胎的气、天气预报的气压" },
@@ -310,42 +315,42 @@ export const derivedUnits: readonly DerivedUnit[] = [
   { name: "瓦特", symbol: "W", quantity: "功率", emoji: "💡", recipe: "焦耳 ÷ 秒", uses: ["kilogram", "metre", "second"], example: "电器吃电有多快" },
   { name: "千瓦时（度）", symbol: "kWh", quantity: "电能", emoji: "🧾", recipe: "1000 瓦 × 1 小时", uses: ["kilogram", "metre", "second"], example: "电费单上的“度”", legalOnly: true },
   { name: "库仑", symbol: "C", quantity: "电荷", emoji: "✨", recipe: "安培 × 秒", uses: ["ampere", "second"], example: "一共流过多少电" },
-  { name: "伏特", symbol: "V", quantity: "电压", emoji: "🔋", recipe: "瓦特 ÷ 安培", uses: ["kilogram", "metre", "second", "ampere"], example: "电池上的 1.5 伏" },
+  { name: "伏特", symbol: "V", quantity: "电压", emoji: "🔋", recipe: "瓦特 ÷ 安培", uses: ["kilogram", "metre", "second", "ampere"], example: "干电池 1.5 伏、插座 220 伏" },
   { name: "欧姆", symbol: "Ω", quantity: "电阻", emoji: "🚧", recipe: "伏特 ÷ 安培", uses: ["kilogram", "metre", "second", "ampere"], example: "电线挡着电流有多厉害" },
   { name: "摄氏度", symbol: "℃", quantity: "温度", emoji: "🌡️", recipe: "开尔文 − 273.15", uses: ["kelvin"], example: "天气预报、体温" },
-  { name: "流明", symbol: "lm", quantity: "光通量", emoji: "💡", recipe: "坎德拉 × 立体角", uses: ["candela"], example: "灯泡盒子上写的亮度" },
+  { name: "流明", symbol: "lm", quantity: "光通量", emoji: "💡", recipe: "坎德拉 × 立体角", uses: ["candela"], example: "灯泡盒子上写的总光量" },
   { name: "勒克斯", symbol: "lx", quantity: "照度", emoji: "📖", recipe: "流明 ÷ 平方米", uses: ["candela", "metre"], example: "书桌上够不够亮" },
-  { name: "摩尔每升", symbol: "mol/L", quantity: "浓度", emoji: "🧪", recipe: "摩尔 ÷ 升", uses: ["mole", "metre"], example: "体检单上的血糖" }
+  { name: "摩尔每升", symbol: "mol/L", quantity: "浓度", emoji: "🧪", recipe: "摩尔 ÷ 升", uses: ["mole", "metre"], example: "体检单上的血糖（毫摩尔每升）" }
 ];
 
 /** 词头：放大或缩小单位。power 是 10 的几次方 */
 export type Prefix = { name: string; symbol: string; power: number; example?: string; isNew?: boolean };
 
 export const prefixes: readonly Prefix[] = [
-  { name: "昆", symbol: "Q", power: 30, isNew: true },
+  { name: "昆", symbol: "Q", power: 30, isNew: true, example: "太阳大约 2 昆克重" },
   { name: "容", symbol: "R", power: 27, isNew: true, example: "地球大约 6 容克重" },
   { name: "尧", symbol: "Y", power: 24 },
-  { name: "泽", symbol: "Z", power: 21 },
+  { name: "泽", symbol: "Z", power: 21, example: "全球一年的网络数据量（ZB）" },
   { name: "艾", symbol: "E", power: 18 },
-  { name: "拍", symbol: "P", power: 15 },
+  { name: "拍", symbol: "P", power: 15, example: "超级计算机算力" },
   { name: "太", symbol: "T", power: 12, example: "硬盘 1 TB" },
   { name: "吉", symbol: "G", power: 9, example: "手机 128 GB" },
   { name: "兆", symbol: "M", power: 6, example: "兆瓦、兆赫" },
   { name: "千", symbol: "k", power: 3, example: "千米、千克、千瓦" },
   { name: "百", symbol: "h", power: 2, example: "百帕（气压）" },
   { name: "十", symbol: "da", power: 1 },
-  { name: "分", symbol: "d", power: -1, example: "分米、分升" },
+  { name: "分", symbol: "d", power: -1, example: "分米、分升、分贝" },
   { name: "厘", symbol: "c", power: -2, example: "厘米" },
   { name: "毫", symbol: "m", power: -3, example: "毫米、毫升、毫克" },
   { name: "微", symbol: "μ", power: -6, example: "微米、微秒" },
   { name: "纳", symbol: "n", power: -9, example: "纳米、纳秒" },
-  { name: "皮", symbol: "p", power: -12 },
-  { name: "飞", symbol: "f", power: -15 },
-  { name: "阿", symbol: "a", power: -18 },
+  { name: "皮", symbol: "p", power: -12, example: "原子之间的距离（百皮米级）" },
+  { name: "飞", symbol: "f", power: -15, example: "质子大小约 1 飞米、飞秒激光" },
+  { name: "阿", symbol: "a", power: -18, example: "阿秒光脉冲、引力波伸缩量" },
   { name: "仄", symbol: "z", power: -21 },
   { name: "幺", symbol: "y", power: -24 },
   { name: "柔", symbol: "r", power: -27, isNew: true },
-  { name: "亏", symbol: "q", power: -30, isNew: true }
+  { name: "亏", symbol: "q", power: -30, isNew: true, example: "一个电子的质量约 1 亏克" }
 ];
 
 /** 今天还会碰到的老单位，和它们跟米、千克说好的换算 */
@@ -394,7 +399,9 @@ export const oldUnits: readonly OldUnitGroup[] = [
       { kind: "质量", name: "1 吨", value: "1000 千克" },
       { kind: "容积", name: "1 升", value: "1 立方分米" },
       { kind: "长度", name: "1 海里", value: "1852 米" },
-      { kind: "速度", name: "1 节", value: "每小时 1 海里" }
+      { kind: "速度", name: "1 节", value: "每小时 1 海里" },
+      { kind: "宝石", name: "1 克拉", value: "200 毫克（0.2 克）" },
+      { kind: "声音", name: "分贝（dB）", value: "每加 10 分贝，声强 ×10" }
     ]
   }
 ];

@@ -245,5 +245,63 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "eight-chi",
+    scenes: [
+      {
+        turn: 0, title: "身长八尺？", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🧔", path: [[280, 420]], size: 220, from: 0.3 },
+          { kind: "label", at: [280, 540], text: "诸葛亮：八尺", side: "bottom", pos: [280, 640], from: 1 },
+          { kind: "text", at: [800, 240], text: "三国 1 尺 ≈ 24 厘米", size: "m", color: "#c27c0e", from: 2.6 },
+          { kind: "count", at: [800, 470], label: "八尺大约", start: 0, end: 192, unit: "厘米", over: 2.2, from: 4.2 },
+          { kind: "text", at: [600, 800], text: "一米九出头的大高个", size: "m", color: "#2f7d32", from: 7.4 }
+        ]
+      },
+      {
+        turn: 1, title: "博物馆里的汉尺", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "出土的铜尺、骨尺", size: "m", from: 0.3 },
+          { kind: "ruler", at: [220, 260], length: 700, ticks: 10, every: 0, color: "#e8c48a", caption: "汉朝一尺", draw: 1.4, from: 1 },
+          { kind: "text", at: [600, 540], text: "1 尺 ≈ 23 厘米", size: "m", color: "#225dac", from: 3.4 },
+          { kind: "sprite", icon: "🧍", path: [[300, 740]], size: 130, from: 5.8 },
+          { kind: "label", at: [360, 740], text: "七尺 ≈ 162 厘米", side: "right", pos: [660, 740], from: 6.4 }
+        ]
+      },
+      {
+        turn: 2, title: "尺子慢慢长大", view: "grid", duration: 13,
+        cues: [
+          { kind: "shape", shape: "rect", at: [445, 220], size: [590, 72], color: "#ffd6bf", text: "汉尺", from: 0.4 },
+          { kind: "label", at: [740, 220], text: "以前短得多", side: "right", pos: [950, 220], from: 1 },
+          { kind: "shape", shape: "rect", at: [535, 390], size: [770, 72], color: "#ffe08a", text: "唐大尺", from: 2.4 },
+          { kind: "label", at: [920, 390], text: "约 30 厘米", side: "right", pos: [1060, 310], from: 3 },
+          { kind: "shape", shape: "rect", at: [560, 560], size: [820, 72], color: "#bfe3ff", text: "明清尺", from: 4.4 },
+          { kind: "label", at: [970, 596], text: "约 32 厘米", side: "bottom", pos: [960, 670], from: 5 },
+          { kind: "text", at: [600, 810], text: "尺子做长，收税更多", size: "m", color: "#e5484d", from: 7.6 }
+        ]
+      },
+      {
+        turn: 3, title: "大尺和小尺", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "唐朝：大尺和小尺", size: "m", color: "#c27c0e", from: 0.3 },
+          { kind: "sprite", icon: "🧵", path: [[300, 360]], size: 120, from: 1.2 },
+          { kind: "label", at: [300, 430], text: "大尺 30 厘米", side: "bottom", pos: [300, 540], from: 1.8 },
+          { kind: "sprite", icon: "🎵", path: [[900, 360]], size: 120, from: 3.4 },
+          { kind: "label", at: [900, 430], text: "小尺 24 厘米多", side: "bottom", pos: [900, 540], from: 4 },
+          { kind: "text", at: [600, 770], text: "裁衣、木匠、量田各不同", size: "m", color: "#7a4fd6", from: 7 }
+        ]
+      },
+      {
+        turn: 4, title: "再也不偷偷变长", duration: 11,
+        cues: [
+          { kind: "text", at: [600, 130], text: "1929年：市尺三分之一米", size: "m", color: "#225dac", from: 0.3 },
+          { kind: "ruler", at: [150, 280], length: 900, ticks: 10, every: 0, caption: "米", draw: 1.2, from: 1.4 },
+          { kind: "sprite", icon: "💡", path: [[320, 620]], size: 120, from: 4.4 },
+          { kind: "label", at: [380, 620], text: "光速定得死死的", side: "right", pos: [680, 620], from: 5 },
+          { kind: "text", at: [600, 810], text: "过一千年也不会变长", size: "m", color: "#2f7d32", from: 7.4 }
+        ]
+      }
+    ]
   }
 ];

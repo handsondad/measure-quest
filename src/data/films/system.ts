@@ -129,5 +129,63 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "decibel",
+    scenes: [
+      {
+        turn: 0, title: "十分之一贝尔", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "☎️", path: [[260, 340]], size: 150, from: 0.3 },
+          { kind: "label", at: [260, 430], text: "发明电话的贝尔", side: "bottom", pos: [260, 540], from: 1 },
+          { kind: "shape", shape: "pill", at: [780, 340], size: [340, 110], color: "#e9dcff", text: "分贝", from: 2.6 },
+          { kind: "label", at: [780, 285], text: "分 = 十分之一", side: "top", pos: [780, 190], from: 3.4 },
+          { kind: "text", at: [600, 760], text: "一把“翻倍跳”的尺子", size: "m", color: "#7a4fd6", from: 6.6 }
+        ]
+      },
+      {
+        turn: 1, title: "每加 10 大 10 倍", view: "grid", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🍃", path: [[240, 320]], size: 120, from: 0.3 },
+          { kind: "sprite", icon: "✈️", path: [[960, 320]], size: 140, from: 1.2 },
+          { kind: "arrow", path: [[340, 320], [840, 320]], text: "上万亿倍", draw: 1, from: 2 },
+          { kind: "text", at: [600, 560], text: "劲儿变大 10 倍", size: "m", color: "#225dac", from: 4.6 },
+          { kind: "text", at: [600, 720], text: "分贝只加 10", size: "l", color: "#2f7d32", from: 6.8 }
+        ]
+      },
+      {
+        turn: 2, title: "40 到 60 差百倍", view: "grid", duration: 12,
+        cues: [
+          { kind: "shape", shape: "pill", at: [200, 360], size: [210, 96], color: "#b9f0c8", text: "40 分贝", from: 0.3 },
+          { kind: "arrow", path: [[320, 360], [460, 360]], text: "×10", draw: 0.6, from: 1.4 },
+          { kind: "shape", shape: "pill", at: [580, 360], size: [210, 96], color: "#ffe08a", text: "50 分贝", from: 2.2 },
+          { kind: "arrow", path: [[700, 360], [840, 360]], text: "×10", draw: 0.6, from: 3.2 },
+          { kind: "shape", shape: "pill", at: [970, 360], size: [210, 96], color: "#ffd6bf", text: "60 分贝", from: 4 },
+          { kind: "text", at: [600, 610], text: "10×10 = 100 倍", size: "m", color: "#e5484d", from: 5.8 },
+          { kind: "text", at: [600, 770], text: "30到60：差1000倍", size: "m", color: "#225dac", from: 8 }
+        ]
+      },
+      {
+        turn: 3, title: "0 分贝不是没声", duration: 11,
+        cues: [
+          { kind: "sprite", icon: "👂", path: [[360, 360]], size: 170, from: 0.3 },
+          { kind: "sprite", icon: "🦟", path: [[820, 360]], size: 110, wobble: true, from: 1.4 },
+          { kind: "label", at: [820, 290], text: "0 分贝：刚能听见", side: "top", pos: [820, 190], from: 2.2 },
+          { kind: "myth", wrong: "0 分贝就是一点声音都没有", right: "比这更轻的声音，是负分贝", from: 4.8 }
+        ]
+      },
+      {
+        turn: 4, title: "保护小耳朵", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "📚", path: [[220, 340]], size: 120, from: 0.3 },
+          { kind: "label", at: [220, 410], text: "轻声听：耳朵舒服", side: "bottom", pos: [220, 520], from: 1 },
+          { kind: "sprite", icon: "🎧", path: [[600, 340]], size: 120, from: 2.6 },
+          { kind: "label", at: [600, 275], text: "超过 80 分贝伤耳", side: "top", pos: [600, 190], from: 3.2 },
+          { kind: "sprite", icon: "🚑", path: [[980, 340]], size: 120, from: 4.8 },
+          { kind: "label", at: [980, 410], text: "120 分贝快捂耳", side: "bottom", pos: [960, 520], from: 5.4 },
+          { kind: "text", at: [600, 780], text: "耳机音量别开太高", size: "m", color: "#2f7d32", from: 8 }
+        ]
+      }
+    ]
   }
 ];

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useRef, useState, type CSSProperties } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import type { LensState, RunLabCue } from "../components/RunLab3D";
 import { WebGLBoundary } from "../components/WebGLBoundary";
 import { labs } from "../data/labs";
@@ -12,12 +12,13 @@ import "../components/RunLab.css";
 import "./Questions.css";
 
 const RunLab3D = lazy(() => import("../components/RunLab3D"));
+const posterUrl = `${import.meta.env.BASE_URL}images/home-duo-poster.webp`;
 
 const chats: readonly (readonly [string, string])[] = [
   ["爸爸，我量桌子是 8 拃，你量才 5 拃，听谁的？", "好问题！这就是人类为什么要发明尺子。我们从头讲起。"],
   ["世界上的单位那么多，到底有几种？", "最基本的只有 7 个，像 7 块积木，别的单位都是它们拼出来的。"],
   ["一分钟为什么是 60 秒，不是 100 秒？", "这要从四千年前的古巴比伦说起。挑一个主题，我们慢慢聊。"],
-  ["我能自己动手试试吗？", "能！下面的「动手实验室」里有天平、温度计、电表，还有卫星找人。"]
+  ["我能自己动手试试吗？", "能！下面的「动手实验室」里有天平、量筒、温度计、电表，还有卫星找人。"]
 ];
 
 /** 奇遇记系列的兄弟站点 */
@@ -39,6 +40,9 @@ type Props = {
 
 export function HomePage({ heard, onTopic, onLab, onUnit, onUnits, onTimeline, onSources }: Props) {
   const [webgl] = useState(canUseWebGL);
+  const [saveData] = useState(() => Boolean((navigator as { connection?: { saveData?: boolean } }).connection?.saveData));
+  const [load3d, setLoad3d] = useState(false);
+  const [ready3d, setReady3d] = useState(false);
   const reducedMotion = useReducedMotion();
   const [stageRef, inView] = useInView<HTMLDivElement>();
   const [chat, setChat] = useState(0);
@@ -46,13 +50,33 @@ export function HomePage({ heard, onTopic, onLab, onUnit, onUnits, onTimeline, o
   const lensRef = useRef<LensState>({ on: false, follow: true, x: 0, y: 0, r: 80 });
   const cueRef = useRef<RunLabCue>({ id: 0, clip: "Jump" });
 
+  useEffect(() => {
+    if (!webgl || saveData || !inView || load3d) return;
+    let idle = 0;
+    const win = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    const timer = window.setTimeout(() => {
+      if (win.requestIdleCallback) idle = win.requestIdleCallback(() => setLoad3d(true), { timeout: 1000 });
+      else setLoad3d(true);
+    }, 220);
+    return () => {
+      window.clearTimeout(timer);
+      if (idle && win.cancelIdleCallback) win.cancelIdleCallback(idle);
+    };
+  }, [webgl, saveData, inView, load3d]);
+
+  const handleReady = useCallback(() => {
+    requestAnimationFrame(() => setReady3d(true));
+  }, []);
+
   function talk() {
     cueRef.current = { id: cueRef.current.id + 1, clip: cueRef.current.id % 2 ? "Victory" : "Jump" };
     setChat((chat + 1) % chats.length);
   }
 
   const [nianLine, dadLine] = chats[chat];
-  const flat = <div className="home-planet-flat" aria-hidden="true">👨🧒</div>;
 
   return (
     <div className="home">
@@ -63,16 +87,27 @@ export function HomePage({ heard, onTopic, onLab, onUnit, onUnits, onTimeline, o
 
       <section aria-labelledby="home-duo-title">
         <h2 id="home-duo-title" className="home-section-title">小念和爸爸探索测量的奥秘</h2>
-        <div ref={stageRef} className="home-planet">
-          {webgl ? (
-            <WebGLBoundary name="home-planet" fallback={flat}>
-              <Suspense fallback={flat}>
+        <div
+          ref={stageRef}
+          className={`home-planet ${ready3d ? "is-3d" : ""}`}
+          onPointerEnter={() => webgl && !saveData && setLoad3d(true)}
+          onClick={(event) => {
+            if (!ready3d && event.target === event.currentTarget) {
+              if (webgl && !saveData) setLoad3d(true);
+              talk();
+            }
+          }}
+        >
+          <img className="home-duo-poster" src={posterUrl} width={1140} height={380} fetchPriority="high" decoding="async" alt="" aria-hidden="true" />
+          {webgl && !saveData && load3d && (
+            <WebGLBoundary name="home-planet" fallback={null}>
+              <Suspense fallback={null}>
                 <RunLab3D character="nian" partner="dad" bodyRef={bodyRef} lensRef={lensRef} cueRef={cueRef}
                   reducedMotion={reducedMotion} active={inView} label="爸爸和小念站在小星球上，点他们会接着聊"
-                  onCharacterTap={talk} onReady={() => undefined} />
+                  onCharacterTap={talk} onReady={handleReady} />
               </Suspense>
             </WebGLBoundary>
-          ) : flat}
+          )}
           <button type="button" className="home-bubble is-nian" onClick={talk}><b>小念</b>{nianLine}</button>
           <button type="button" className="home-bubble is-dad" onClick={talk}><b>爸爸</b>{dadLine}</button>
         </div>

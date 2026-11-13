@@ -123,5 +123,59 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "carat",
+    scenes: [
+      {
+        turn: 0, title: "克拉量的是多重", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "💎", path: [[300, 340]], size: 170, from: 0.3 },
+          { kind: "label", at: [300, 440], text: "1 克拉：200 毫克", side: "bottom", pos: [300, 550], from: 1 },
+          { kind: "sprite", icon: "📎", path: [[880, 340]], size: 150, from: 2.8 },
+          { kind: "label", at: [880, 440], text: "回形针 ≈ 1 克", side: "bottom", pos: [880, 550], from: 3.4 },
+          { kind: "text", at: [600, 700], text: "5 克拉 = 1 克", size: "m", color: "#225dac", from: 5.4 },
+          { kind: "text", at: [600, 820], text: "克拉是重量，不是大小", size: "m", color: "#2f7d32", from: 7.8 }
+        ]
+      },
+      {
+        turn: 1, title: "角豆树的种子", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🌳", path: [[250, 360]], size: 180, from: 0.3 },
+          { kind: "label", at: [250, 460], text: "角豆树", side: "bottom", pos: [250, 570], from: 1 },
+          { kind: "flow", path: [[520, 360], [960, 360]], icon: "🫘", count: 5, speed: 0, size: 16, from: 2.2 },
+          { kind: "label", at: [740, 320], text: "一颗 ≈ 0.2 克", side: "top", pos: [740, 210], from: 3 },
+          { kind: "text", at: [600, 760], text: "古人拿小豆子当砝码", size: "m", color: "#c27c0e", from: 6.2 }
+        ]
+      },
+      {
+        turn: 2, title: "豆子也有轻有重", duration: 11,
+        cues: [
+          { kind: "balance", at: [600, 250], size: 210, left: "🫘", right: "🫘", tilt: 0, tiltTo: 12, over: 1.4, from: 0.4 },
+          { kind: "myth", wrong: "每颗角豆种子都一样重", right: "也有轻有重，各国还不统一", from: 3.2 }
+        ]
+      },
+      {
+        turn: 3, title: "1907 年统一", view: "grid", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "1907 年 国际计量大会", size: "m", color: "#225dac", from: 0.3 },
+          { kind: "shape", shape: "pill", at: [600, 320], size: [420, 110], color: "#bfe3ff", text: "1 克拉", motion: "pulse", from: 1.4 },
+          { kind: "text", at: [600, 490], text: "正好 = 200 毫克", size: "l", color: "#2f7d32", from: 2.8 },
+          { kind: "text", at: [600, 660], text: "分成 100 分", size: "m", from: 5.4 },
+          { kind: "text", at: [600, 790], text: "50 分 = 半克拉", size: "m", color: "#7a4fd6", from: 7.4 }
+        ]
+      },
+      {
+        turn: 4, title: "18K 不是克拉", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "💍", path: [[280, 340]], size: 160, from: 0.3 },
+          { kind: "label", at: [280, 430], text: "钻石：1 克拉重", side: "bottom", pos: [280, 540], from: 1 },
+          { kind: "sprite", icon: "🪙", path: [[880, 340]], size: 160, from: 2.6 },
+          { kind: "label", at: [880, 430], text: "24K = 纯金", side: "bottom", pos: [880, 540], from: 3.2 },
+          { kind: "meter", at: [600, 680], label: "18K 含金", start: 0, end: 0.75, color: "#f5c542", from: 5 },
+          { kind: "text", at: [600, 820], text: "24 份里有 18 份纯金", size: "m", color: "#c27c0e", from: 7.2 }
+        ]
+      }
+    ]
   }
 ];

@@ -129,5 +129,65 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "volt",
+    scenes: [
+      {
+        turn: 0, title: "推着电荷走的劲", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "V = 伏特（电压）", size: "l", color: "#c27c0e", from: 0.3 },
+          { kind: "shape", shape: "rect", at: [240, 330], size: [180, 220], color: "#bfe3ff", text: "高水箱", from: 1.2 },
+          { kind: "flow", path: [[350, 400], [980, 400]], color: "#4fb6ff", count: 10, speed: 280, size: 12, from: 2 },
+          { kind: "label", at: [660, 380], text: "水压越大冲得越猛", side: "bottom", pos: [660, 510], from: 3 },
+          { kind: "text", at: [600, 760], text: "电压：推着电荷往前跑", size: "m", color: "#2f7d32", from: 6.4 }
+        ]
+      },
+      {
+        turn: 1, title: "伏打的小圆塔", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "1800 年：第一块电池", size: "m", color: "#225dac", from: 0.3 },
+          { kind: "shape", shape: "pill", at: [520, 320], size: [260, 56], color: "#dfe5ec", text: "锌片", from: 1.2 },
+          { kind: "shape", shape: "pill", at: [520, 390], size: [260, 56], color: "#ffe08a", text: "盐水纸", from: 1.8 },
+          { kind: "shape", shape: "pill", at: [520, 460], size: [260, 56], color: "#c9ced6", text: "银片", from: 2.4 },
+          { kind: "label", at: [660, 390], text: "一层一层叠起来", side: "right", pos: [930, 390], from: 3.4 },
+          { kind: "text", at: [600, 760], text: "1881 年定名“伏特”", size: "m", color: "#7a4fd6", from: 6.8 }
+        ]
+      },
+      {
+        turn: 2, title: "电池排成一队", view: "grid", duration: 12,
+        cues: [
+          { kind: "shape", shape: "rect", at: [270, 320], size: [220, 96], color: "#ffe08a", text: "1.5 伏", from: 0.4 },
+          { kind: "text", at: [450, 320], text: "+", size: "l", from: 1.2 },
+          { kind: "shape", shape: "rect", at: [630, 320], size: [220, 96], color: "#ffe08a", text: "1.5 伏", from: 1.8 },
+          { kind: "shape", shape: "pill", at: [960, 320], size: [200, 96], color: "#b9f0c8", text: "3 伏", from: 2.8 },
+          { kind: "text", at: [600, 560], text: "四节串起来 = 6 伏", size: "m", color: "#225dac", from: 4.8 },
+          { kind: "text", at: [600, 740], text: "5伏×2安培=10瓦", size: "m", color: "#2f7d32", from: 7.4 }
+        ]
+      },
+      {
+        turn: 3, title: "1.5 伏和 220 伏", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🔋", path: [[250, 330]], size: 130, from: 0.3 },
+          { kind: "label", at: [250, 410], text: "1.5 伏：推力小", side: "bottom", pos: [250, 520], from: 1 },
+          { kind: "sprite", icon: "⚠️", path: [[600, 330]], size: 120, from: 2.6 },
+          { kind: "label", at: [600, 270], text: "超过 36 伏就危险", side: "top", pos: [600, 185], from: 3.2 },
+          { kind: "sprite", icon: "🔌", path: [[950, 330]], size: 130, from: 4.8 },
+          { kind: "label", at: [950, 410], text: "220 伏：绝对别碰", side: "bottom", pos: [950, 520], from: 5.4 },
+          { kind: "text", at: [600, 780], text: "220 伏会冲破皮肤！", size: "m", color: "#e5484d", from: 7.8 }
+        ]
+      },
+      {
+        turn: 4, title: "各国电压不一样", duration: 12,
+        cues: [
+          { kind: "shape", shape: "pill", at: [250, 300], size: [260, 96], color: "#ffd6bf", text: "220 伏", from: 0.4 },
+          { kind: "shape", shape: "pill", at: [600, 300], size: [260, 96], color: "#bfe3ff", text: "120 伏", from: 1.4 },
+          { kind: "shape", shape: "pill", at: [950, 300], size: [260, 96], color: "#e9dcff", text: "100 伏", from: 2.4 },
+          { kind: "sprite", icon: "📱", path: [[340, 600]], size: 120, from: 4.4 },
+          { kind: "label", at: [400, 600], text: "100—240V 通用", side: "right", pos: [710, 600], from: 5 },
+          { kind: "text", at: [600, 800], text: "插错老电器会烧坏", size: "m", color: "#e5484d", from: 7.8 }
+        ]
+      }
+    ]
   }
 ];

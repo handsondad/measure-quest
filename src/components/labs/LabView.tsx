@@ -8,6 +8,7 @@ import { PowerLab } from "./PowerLab";
 import { PrefixLab } from "./PrefixLab";
 import { SixtyLab } from "./SixtyLab";
 import { ThermometerLab } from "./ThermometerLab";
+import { VolumeLab } from "./VolumeLab";
 import "./Labs.css";
 
 const views: Record<LabId, () => JSX.Element> = {
@@ -17,7 +18,8 @@ const views: Record<LabId, () => JSX.Element> = {
   thermometer: ThermometerLab,
   gps: GpsLab,
   prefix: PrefixLab,
-  power: PowerLab
+  power: PowerLab,
+  volume: VolumeLab
 };
 
 /** 一个能动手玩的小实验；inline 是嵌在对话气泡里的样子 */

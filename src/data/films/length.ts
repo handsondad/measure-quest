@@ -194,5 +194,61 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "archimedes-volume",
+    scenes: [
+      {
+        turn: 0, title: "占多大地方", view: "grid", duration: 12,
+        cues: [
+          { kind: "shape", shape: "rect", at: [280, 360], size: [120, 120], color: "#bfe3ff", text: "1毫升", from: 0.4 },
+          { kind: "label", at: [280, 430], text: "边长 1 厘米", side: "bottom", pos: [280, 540], from: 1 },
+          { kind: "shape", shape: "rect", at: [640, 360], size: [240, 240], color: "#4fb6ff", text: "1 升", from: 2.4 },
+          { kind: "label", at: [640, 230], text: "1000 毫升", side: "top", pos: [640, 145], from: 3 },
+          { kind: "sprite", icon: "🪨", path: [[1000, 380]], size: 130, from: 5 },
+          { kind: "text", at: [600, 790], text: "歪歪扭扭：请水帮忙！", size: "m", color: "#2f7d32", from: 7.4 }
+        ]
+      },
+      {
+        turn: 1, title: "澡盆溢出的水", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "👑", path: [[250, 280]], size: 140, from: 0.3 },
+          { kind: "label", at: [250, 360], text: "掺了银子？", side: "bottom", pos: [250, 470], from: 1 },
+          { kind: "sprite", icon: "🛁", path: [[780, 380]], size: 220, from: 2.6 },
+          { kind: "flow", path: [[860, 360], [1040, 540]], icon: "💧", count: 5, speed: 200, size: 12, from: 3.6 },
+          { kind: "text", at: [600, 760], text: "占多大地方，挤走多少水", size: "m", color: "#225dac", from: 6.4 }
+        ]
+      },
+      {
+        turn: 2, title: "金子比银子紧实", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "同样是 500 克重", size: "m", color: "#c27c0e", from: 0.3 },
+          { kind: "shape", shape: "rect", at: [330, 380], size: [170, 140], color: "#ffd76a", text: "纯金", from: 1.2 },
+          { kind: "label", at: [330, 460], text: "只占约 26 毫升", side: "bottom", pos: [330, 570], from: 1.8 },
+          { kind: "shape", shape: "rect", at: [870, 380], size: [240, 190], color: "#dfe5ec", text: "掺银王冠", from: 3.4 },
+          { kind: "label", at: [870, 485], text: "涨到 36 毫升", side: "bottom", pos: [870, 590], from: 4 },
+          { kind: "text", at: [600, 790], text: "挤出的水变多了！", size: "m", color: "#e5484d", from: 6.8 }
+        ]
+      },
+      {
+        turn: 3, title: "量筒减一减", view: "grid", duration: 12,
+        cues: [
+          { kind: "shape", shape: "pill", at: [230, 380], size: [230, 100], color: "#bfe3ff", text: "200毫升", from: 0.4 },
+          { kind: "arrow", path: [[370, 380], [670, 380]], text: "放进石头", draw: 0.7, from: 1.6 },
+          { kind: "shape", shape: "pill", at: [830, 380], size: [230, 100], color: "#4fb6ff", text: "260毫升", from: 2.6 },
+          { kind: "text", at: [600, 600], text: "260−200=60毫升", size: "m", color: "#225dac", from: 4.8 },
+          { kind: "text", at: [600, 760], text: "= 60 立方厘米", size: "l", color: "#2f7d32", from: 7.2 }
+        ]
+      },
+      {
+        turn: 4, title: "1 升锁在米上", duration: 11,
+        cues: [
+          { kind: "text", at: [600, 140], text: "1964 年 国际计量大会", size: "m", color: "#225dac", from: 0.3 },
+          { kind: "shape", shape: "rect", at: [600, 420], size: [240, 240], color: "#bfe3ff", text: "1 升", motion: "pulse", from: 1.4 },
+          { kind: "label", at: [720, 420], text: "边长 10 厘米", side: "right", pos: [960, 420], from: 2.2 },
+          { kind: "text", at: [600, 780], text: "升和米彻底锁在一起", size: "m", color: "#2f7d32", from: 6.4 }
+        ]
+      }
+    ]
   }
 ];

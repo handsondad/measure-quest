@@ -47,18 +47,18 @@ export const topics: readonly Topic[] = [
   },
   {
     id: "world", group: "origin", emoji: "🌍", title: "世界各地的单位", color: "#f2a541",
-    kidHook: "英尺是国王的脚吗？英里、海里为什么都叫“里”？",
-    dadLens: "英尺、英寸、英里、海里这些老单位的来历，和它们怎么交给了米"
+    kidHook: "英尺是国王的脚吗？钻石说的 1 克拉有多重？",
+    dadLens: "英尺、英里、海里、克拉这些老单位的来历，和它们怎么交给了米与千克"
   },
   {
     id: "system", group: "si", emoji: "🧱", title: "七块积木和词头", color: "#9b7bea",
-    kidHook: "全世界一共有几把“尺子”？千米的“千”是什么意思？",
-    dadLens: "国际单位制：7 个基本单位，和放大缩小它们的词头"
+    kidHook: "全世界一共有几把“尺子”？墙上的 40 分贝是什么意思？",
+    dadLens: "国际单位制：7 个基本单位、放大缩小的词头，还有分贝这把翻倍尺"
   },
   {
     id: "length", group: "si", unit: "metre", emoji: "📏", title: "长度 · 米", color: "#4fb6ff",
-    kidHook: "一米是谁定的？光年是时间还是长度？",
-    dadLens: "长度：从量地球到用光定义的米，一直量到星星"
+    kidHook: "一米是谁定的？歪歪扭扭的石头怎么量大小？",
+    dadLens: "长度与体积：从量地球、排水量石头，到用光定义的米和光年"
   },
   {
     id: "mass", group: "si", unit: "kilogram", emoji: "⚖️", title: "质量 · 千克", color: "#6fd39a",
@@ -67,8 +67,8 @@ export const topics: readonly Topic[] = [
   },
   {
     id: "time", group: "si", unit: "second", emoji: "⏰", title: "时间 · 秒", color: "#b48cff",
-    kidHook: "为什么一分钟是 60 秒？一秒钟是谁说了算？",
-    dadLens: "时间：古巴比伦的六十进位和原子钟"
+    kidHook: "为什么 15 分钟叫“一刻”？比原子钟还准的钟长什么样？",
+    dadLens: "时间：六十进位、铜壶滴漏，到原子钟和未来的光钟"
   },
   {
     id: "heat", group: "si", unit: "kelvin", emoji: "🌡️", title: "温度 · 开尔文", color: "#ff7a8a",
@@ -77,23 +77,23 @@ export const topics: readonly Topic[] = [
   },
   {
     id: "electric", group: "si", unit: "ampere", emoji: "⚡", title: "电流 · 安培", color: "#f5c542",
-    kidHook: "充电器上的 2A 是什么？电费单上的“一度电”是多少？",
-    dadLens: "电流：数一秒钟流过多少电荷，还有瓦和度电"
+    kidHook: "充电器上的 2A、干电池上的 1.5V、电费单上的“一度电”是什么？",
+    dadLens: "电：流过多少电荷的安培、推着电荷走的伏特，还有瓦和度电"
   },
   {
     id: "light", group: "si", unit: "candela", emoji: "💡", title: "发光强度 · 坎德拉", color: "#ffb84d",
-    kidHook: "灯有多亮怎么量？在多亮的地方看书眼睛才不累？",
-    dadLens: "光：从一支蜡烛来的坎德拉，和照到书上的勒克斯"
+    kidHook: "买灯泡该看多少瓦还是多少流明？看书要多亮才不累？",
+    dadLens: "光：坎德拉、流明、勒克斯三兄弟，和灯泡上的色温"
   },
   {
     id: "amount", group: "si", unit: "mole", emoji: "🫘", title: "物质的量 · 摩尔", color: "#7cc4a4",
-    kidHook: "一口水里有多少个水分子？一斤绿豆和一斤黄豆谁的颗数多？",
-    dadLens: "摩尔：数不清的小颗粒，怎么用称一称来数"
+    kidHook: "一口水里有多少水分子？体检单上的“毫摩尔每升”是什么？",
+    dadLens: "摩尔：数不清的小颗粒怎么称出来，还有血里的浓度"
   },
   {
     id: "modern", group: "today", emoji: "🛰️", title: "今天的测量", color: "#4fd1c5",
-    kidHook: "手机地图怎么知道我在哪？芯片里的线有多细？",
-    dadLens: "卫星定位、纳米芯片，和越来越准的测量"
+    kidHook: "手机怎么定位？大海涨了几毫米、黑洞撞出的小涟漪怎么量？",
+    dadLens: "卫星定位、纳米芯片、给地球体检，和世界上最准的激光尺子"
   }
 ];
 
@@ -102,7 +102,7 @@ export type Difficulty = 1 | 2 | 3;
 export const difficultyLabel: Record<Difficulty, string> = { 1: "入门", 2: "进阶", 3: "挑战" };
 
 /** 能动手玩的小实验，组件在 src/components/labs/ */
-export type LabId = "hand-span" | "balance" | "sixty" | "thermometer" | "gps" | "prefix" | "power";
+export type LabId = "hand-span" | "balance" | "sixty" | "thermometer" | "gps" | "prefix" | "power" | "volume";
 
 export type ShowFrame = { icon: string; label: string };
 

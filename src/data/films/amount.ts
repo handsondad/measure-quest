@@ -115,5 +115,65 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "blood-sugar",
+    scenes: [
+      {
+        turn: 0, title: "毫摩尔每升", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "📋", path: [[260, 340]], size: 170, from: 0.3 },
+          { kind: "label", at: [260, 440], text: "5.2 毫摩尔每升", side: "bottom", pos: [260, 550], from: 1 },
+          { kind: "shape", shape: "rect", at: [800, 340], size: [220, 260], color: "#ffd6d6", text: "1 升血", from: 2.6 },
+          { kind: "text", at: [600, 680], text: "毫摩尔每升：数糖分子", size: "m", color: "#225dac", from: 5 },
+          { kind: "text", at: [600, 810], text: "3.9～6.1 算正常", size: "m", color: "#2f7d32", from: 7.6 }
+        ]
+      },
+      {
+        turn: 1, title: "挤得有多密", duration: 12,
+        cues: [
+          { kind: "shape", shape: "rect", at: [300, 380], size: [160, 180], color: "#ffe08a", from: 0.4 },
+          { kind: "flow", path: [[250, 330], [350, 330], [350, 430], [250, 430]], color: "#e5484d", count: 8, speed: 0, size: 9, from: 1 },
+          { kind: "label", at: [300, 490], text: "小杯：挤得很密", side: "bottom", pos: [300, 590], from: 1.6 },
+          { kind: "shape", shape: "rect", at: [860, 360], size: [320, 260], color: "#bfe3ff", from: 3 },
+          { kind: "flow", path: [[750, 290], [970, 290], [970, 430], [750, 430]], color: "#e5484d", count: 8, speed: 0, size: 9, from: 3.6 },
+          { kind: "label", at: [860, 510], text: "大桶：散得很稀", side: "bottom", pos: [860, 610], from: 4.2 },
+          { kind: "text", at: [600, 790], text: "浓度：每一升里有多密", size: "m", color: "#2f7d32", from: 7 }
+        ]
+      },
+      {
+        turn: 2, title: "分子一对一配对", duration: 11,
+        cues: [
+          { kind: "text", at: [600, 130], text: "细胞干活：按个数配对", size: "m", from: 0.3 },
+          { kind: "shape", shape: "pill", at: [250, 380], size: [240, 96], color: "#ffd6bf", text: "血糖", from: 1.4 },
+          { kind: "shape", shape: "pill", at: [600, 380], size: [240, 96], color: "#bfe3ff", text: "血钙", from: 2.2 },
+          { kind: "shape", shape: "pill", at: [950, 380], size: [240, 96], color: "#b9f0c8", text: "血钾", from: 3 },
+          { kind: "text", at: [600, 620], text: "全用毫摩尔每升", size: "m", color: "#225dac", from: 5 },
+          { kind: "text", at: [600, 770], text: "医生一眼比出多少", size: "m", color: "#2f7d32", from: 7.2 }
+        ]
+      },
+      {
+        turn: 3, title: "两种单位差 18 倍", view: "grid", duration: 12,
+        cues: [
+          { kind: "shape", shape: "pill", at: [240, 360], size: [280, 100], color: "#b9f0c8", text: "5.2", from: 0.4 },
+          { kind: "label", at: [240, 420], text: "毫摩尔每升", side: "bottom", pos: [240, 530], from: 1 },
+          { kind: "arrow", path: [[400, 360], [700, 360]], text: "× 18", draw: 0.8, from: 2.2 },
+          { kind: "shape", shape: "pill", at: [890, 360], size: [280, 100], color: "#ffe08a", text: "约 94", from: 3.4 },
+          { kind: "label", at: [890, 420], text: "每分升多少毫克", side: "bottom", pos: [890, 530], from: 4 },
+          { kind: "text", at: [600, 770], text: "其实是同一个血糖！", size: "m", color: "#e5484d", from: 7 }
+        ]
+      },
+      {
+        turn: 4, title: "试纸变成小电流", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🩸", path: [[220, 380]], size: 130, from: 0.3 },
+          { kind: "arrow", path: [[310, 380], [490, 380]], draw: 0.6, from: 1.4 },
+          { kind: "shape", shape: "rect", at: [640, 380], size: [240, 96], color: "#e9dcff", text: "试纸", from: 2.2 },
+          { kind: "flow", path: [[780, 380], [960, 380]], color: "#4fb6ff", count: 6, speed: 220, size: 10, from: 3.4 },
+          { kind: "sprite", icon: "📟", path: [[1040, 380]], size: 130, from: 4.2 },
+          { kind: "text", at: [600, 740], text: "量一量电流，算出糖多密", size: "m", color: "#2f7d32", from: 7 }
+        ]
+      }
+    ]
   }
 ];

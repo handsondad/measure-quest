@@ -47,7 +47,7 @@
 - `src/data/films/<主题>.ts`：每个问题一部动画，格式见 `types.ts`，汇总在 `index.ts`；`paths.ts` 有画弧线、一拃一拃的路线的小工具。
 - `src/lib/film.ts`：时间线、镜头、钟面指针，全是纯函数；`src/components/film/FilmStage.tsx` 把某一时刻画成 SVG（底图和所有元素，包括 `ruler` `balance` `clock` `thermo`），`FilmPlayer.tsx` 管播放、拖动、分段和配音同步。
 - `src/lib/narration.ts`：配音版时间线，按每轮问答的配音长度把对应的戏等比例拉长。
-- `src/data/labs.ts` + `src/components/labs/`：七个小实验（`hand-span` `balance` `sixty` `thermometer` `gps` `prefix` `power`），`LabView.tsx` 按 id 选组件。问答里用 `show: { kind: "lab", lab: "<id>" }` 嵌进去。
+- `src/data/labs.ts` + `src/components/labs/`：八个小实验（`hand-span` `balance` `sixty` `thermometer` `gps` `prefix` `power` `volume`），`LabView.tsx` 按 id 选组件。问答里用 `show: { kind: "lab", lab: "<id>" }` 嵌进去。
 - `src/data/voice.ts` + `src/data/voice-manifest.json`：配音的时长和指纹；音频在 `public/voice/<问题id>/<轮次>-<nian|dad>.mp3`。
 - `tools/voice/`：配音脚本。
 - `src/components/RunLab3D.tsx`、`run-lab/`：首页小星球上的 3D 小念和爸爸，和身体奇遇记、汉字奇遇记共用，轻易不要改。

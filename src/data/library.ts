@@ -13,6 +13,7 @@ export const library: readonly LibraryShelf[] = [
       { label: "NIST：SI 重新定义", url: "https://www.nist.gov/si-redefinition", note: "美国国家标准与技术研究院的科普专题，每个单位一页。" },
       { label: "NIST：测量系统简史", url: "https://www.nist.gov/pml/owm/metric-si/brief-history-measurement-systems", note: "从肘尺、英制到米制。" },
       { label: "中国计量科学研究院", url: "https://www.nim.ac.cn/", note: "我国的国家计量院，保存和复现国家计量基准。" },
+      { label: "BIPM：时间计量的未来（光钟与月球时间）", url: "https://www.bipm.org/en/time-department/time-future", note: "用光钟重新定义“秒”的路线图，以及月球参考时间标准。" },
       { label: "世界计量日", url: "https://www.worldmetrologyday.org/", note: "每年 5 月 20 日，纪念《米制公约》签署。" }
     ]
   },
@@ -30,7 +31,19 @@ export const library: readonly LibraryShelf[] = [
     items: [
       { label: "中国国家博物馆：八斤铜权", url: "https://en.chnmuseum.cn/collections_577/collection_highlights_608/artifacts_handed___down_from_ancient_times_612/202008/t20200827_247511.html", note: "秦代的秤砣，看“衡”怎样被统一。" },
       { label: "中国国家博物馆：铜量", url: "https://en.chnmuseum.cn/collections_577/collection_highlights_608/artifacts_handed___down_from_ancient_times_612/202008/t20200811_246886.html", note: "古代的标准量器。" },
+      { label: "中国国家博物馆：唐代鎏银花卉用尺", url: "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_25629.shtml", note: "唐代大尺实物（约 29.5 厘米），对比汉尺看历代尺长怎样变长。" },
+      { label: "故宫博物院：交泰殿铜壶滴漏", url: "https://www.dpm.org.cn/collection/clock/232497.html", note: "多级平水壶与九十六刻漏箭，看古人怎样定出 15 分钟“一刻钟”。" },
       { label: "河南博物院：秦始皇二十六年诏版铜权", url: "https://english.chnmus.net/en/collection/details.html?id=7246090676213911552", note: "秤砣上刻着统一度量衡的诏书。" }
+    ]
+  },
+  {
+    title: "现代科技与地球测量", emoji: "🛰️",
+    items: [
+      { label: "Caltech LIGO：激光干涉引力波天文台事实", url: "https://www.ligo.caltech.edu/page/facts", note: "两条 4 千米真空长臂，怎样测出质子宽度万分之一的长度变化。" },
+      { label: "NASA：全球平均海平面卫星观测门户", url: "https://sealevel.nasa.gov/vital-signs/global-mean-sea-level/", note: "1993 年以来测高卫星接力记录的全球海平面毫米级变化。" },
+      { label: "NOAA：冒纳罗亚大气二氧化碳长期记录", url: "https://gml.noaa.gov/ccgg/trends/", note: "1958 年起持续测量每百万个干空气分子中的二氧化碳分子数。" },
+      { label: "世界卫生组织：安全用耳与分贝指南", url: "https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening", note: "常见声音的分贝值与安全收听时长建议。" },
+      { label: "ENERGY STAR：认识灯泡亮度与流明", url: "https://www.energystar.gov/products/learn-about-brightness", note: "为什么挑灯泡看流明（lm），算耗电才看瓦特（W）。" }
     ]
   },
   {

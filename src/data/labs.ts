@@ -17,7 +17,8 @@ export const labs: readonly Lab[] = [
   { id: "thermometer", emoji: "🌡️", title: "两把温度尺子", hook: "拖动红线，看摄氏度和华氏度一起变。", color: "#ff7a8a" },
   { id: "gps", emoji: "🛰️", title: "三颗卫星找小念", hook: "一颗一颗打开卫星的圆圈，找出小念藏在哪。", color: "#4fd1c5" },
   { id: "prefix", emoji: "🪜", title: "给东西挑尺子", hook: "城市间的路、铅笔芯、芯片里的线条，各用千米、毫米还是纳米？", color: "#9b7bea" },
-  { id: "power", emoji: "🔌", title: "当一回电表", hook: "让小灯、电视、空调各开一会儿，算算一共用了几度电。", color: "#f5c542" }
+  { id: "power", emoji: "🔌", title: "当一回电表", hook: "让小灯、电视、空调各开一会儿，算算一共用了几度电。", color: "#f5c542" },
+  { id: "volume", emoji: "👑", title: "量筒抓出假王冠", hook: "把小石头、纯金块和可疑王冠放进水里，看水面涨高多少毫升。", color: "#4fb6ff" }
 ];
 
 export const labById = (id: string): Lab | undefined => labs.find((lab) => lab.id === id);

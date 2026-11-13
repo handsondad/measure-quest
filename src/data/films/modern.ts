@@ -132,5 +132,121 @@ export const films: readonly Film[] = [
         ]
       }
     ]
+  },
+  {
+    question: "earth-checkup",
+    scenes: [
+      {
+        turn: 0, title: "卫星量海面", view: "space", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🛰️", path: [[600, 180]], size: 130, from: 0.3 },
+          { kind: "flow", path: [[580, 260], [580, 580]], color: "#ffe08a", count: 6, speed: 260, size: 9, from: 1.2 },
+          { kind: "flow", path: [[620, 580], [620, 260]], color: "#4fb6ff", count: 6, speed: 260, size: 9, from: 2 },
+          { kind: "shape", shape: "rect", at: [600, 650], size: [1000, 90], color: "#2b6cb0", text: "大海", from: 0.6 },
+          { kind: "label", at: [640, 410], text: "来回时间 × 光速", side: "right", pos: [920, 410], color: "#ffe08a", from: 3.4 },
+          { kind: "text", at: [600, 820], text: "量准到厘米和毫米", size: "m", color: "#ffffff", from: 6.8 }
+        ]
+      },
+      {
+        turn: 1, title: "每年涨 4 毫米多", view: "grid", duration: 12,
+        cues: [
+          { kind: "text", at: [600, 130], text: "1993 年起连续记账", size: "m", color: "#225dac", from: 0.3 },
+          { kind: "line", path: [[180, 560], [420, 510], [660, 440], [980, 330]], color: "#e5484d", width: 8, draw: 2, from: 1.4 },
+          { kind: "count", at: [340, 310], label: "一共涨高", start: 0, end: 11, unit: "厘米多", over: 2, from: 3.6 },
+          { kind: "label", at: [980, 330], text: "每年约 4 毫米多", side: "bottom", pos: [920, 470], from: 5.2 },
+          { kind: "text", at: [600, 780], text: "全世界的浪花平均抵消", size: "m", color: "#2f7d32", from: 7.4 }
+        ]
+      },
+      {
+        turn: 2, title: "冰化和海水变胖", duration: 11,
+        cues: [
+          { kind: "sprite", icon: "🏔️", path: [[300, 330]], size: 150, from: 0.3 },
+          { kind: "label", at: [300, 420], text: "冰川融化流进海", side: "bottom", pos: [300, 530], from: 1 },
+          { kind: "sprite", icon: "🌡️", path: [[900, 330]], size: 150, from: 2.6 },
+          { kind: "label", at: [900, 420], text: "海水受热胀大", side: "bottom", pos: [900, 530], from: 3.2 },
+          { kind: "text", at: [600, 770], text: "两件事一起抬高海面", size: "m", color: "#e5484d", from: 6.4 }
+        ]
+      },
+      {
+        turn: 3, title: "4000 个潜水浮标", duration: 12,
+        cues: [
+          { kind: "count", at: [300, 230], label: "海洋浮标", start: 0, end: 4000, unit: "个", over: 2, from: 0.4 },
+          { kind: "sprite", icon: "🤿", path: [[760, 220], [760, 580], [760, 240]], size: 110, travel: 5, from: 1.4 },
+          { kind: "label", at: [760, 580], text: "潜到 2000 米深", side: "right", pos: [980, 560], from: 3.4 },
+          { kind: "sprite", icon: "🛰️", path: [[1020, 190]], size: 100, from: 5.4 },
+          { kind: "text", at: [600, 800], text: "沿路量水温，发给卫星", size: "m", color: "#225dac", from: 7 }
+        ]
+      },
+      {
+        turn: 4, title: "一百万里数几个", view: "grid", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🏔️", path: [[230, 320]], size: 150, from: 0.3 },
+          { kind: "label", at: [230, 410], text: "1958 年起天天数", side: "bottom", pos: [230, 520], from: 1 },
+          { kind: "shape", shape: "pill", at: [620, 320], size: [220, 96], color: "#bfe3ff", text: "315 个", from: 2.4 },
+          { kind: "arrow", path: [[745, 320], [855, 320]], draw: 0.6, from: 3.4 },
+          { kind: "shape", shape: "pill", at: [990, 320], size: [240, 96], color: "#ffd6bf", text: "420 多个", from: 4.2 },
+          { kind: "text", at: [600, 740], text: "同一套单位，给地球体检", size: "m", color: "#2f7d32", from: 7 }
+        ]
+      }
+    ]
+  },
+  {
+    question: "ligo",
+    scenes: [
+      {
+        turn: 0, title: "4 千米的激光大尺", view: "space", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🕳️", path: [[260, 260]], size: 120, spin: true, from: 0.3 },
+          { kind: "pulse", at: [260, 260], color: "#b48cff", radius: 190, rate: 1.5, from: 0.8 },
+          { kind: "line", path: [[640, 220], [640, 620], [1040, 620]], color: "#ffe08a", width: 12, draw: 1.2, from: 2.4 },
+          { kind: "label", at: [840, 620], text: "两条 4 千米长臂", side: "bottom", pos: [840, 730], color: "#ffe08a", from: 3.6 },
+          { kind: "text", at: [600, 840], text: "捕捉十几亿光年外的涟漪", size: "m", color: "#ffffff", from: 6.8 }
+        ]
+      },
+      {
+        turn: 1, title: "质子万分之一", view: "space", duration: 12,
+        cues: [
+          { kind: "shape", shape: "circle", at: [300, 380], size: [170, 170], color: "#ff9fb0", text: "质子", from: 0.4 },
+          { kind: "label", at: [385, 380], text: "再小一万倍！", side: "right", pos: [660, 380], color: "#ffe08a", from: 1.4 },
+          { kind: "sprite", icon: "⭐", path: [[980, 260]], size: 110, from: 3.8 },
+          { kind: "text", at: [600, 640], text: "4.2 光年外的比邻星", size: "m", color: "#ffffff", from: 4.6 },
+          { kind: "text", at: [600, 780], text: "只挪了一根头发丝", size: "m", color: "#ffe08a", from: 6.8 }
+        ]
+      },
+      {
+        turn: 2, title: "两束激光对步子", view: "grid", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "🔦", path: [[200, 560]], size: 110, rotate: 45, from: 0.3 },
+          { kind: "line", path: [[340, 560], [340, 180]], color: "#e5484d", width: 8, draw: 0.8, from: 1.2 },
+          { kind: "line", path: [[340, 560], [880, 560]], color: "#4fb6ff", width: 8, draw: 0.8, from: 1.6 },
+          { kind: "sprite", icon: "🪞", path: [[340, 150]], size: 90, from: 2.4 },
+          { kind: "sprite", icon: "🪞", path: [[920, 560]], size: 90, from: 2.6 },
+          { kind: "label", at: [340, 560], text: "步调相反：互相抵消", side: "bottom", pos: [560, 690], from: 4.6 },
+          { kind: "text", at: [600, 820], text: "平时出口一片漆黑", size: "m", color: "#225dac", from: 7 }
+        ]
+      },
+      {
+        turn: 3, title: "一拉一压漏出光", view: "space", duration: 12,
+        cues: [
+          { kind: "line", path: [[340, 560], [340, 140]], color: "#ff7a8a", width: 10, draw: 0.8, from: 0.4 },
+          { kind: "label", at: [340, 260], text: "一条拉长一丁点", side: "right", pos: [610, 240], color: "#ffe08a", from: 1.2 },
+          { kind: "line", path: [[340, 560], [800, 560]], color: "#4fb6ff", width: 10, draw: 0.8, from: 2 },
+          { kind: "label", at: [620, 560], text: "另一条压短一丁点", side: "top", pos: [680, 440], color: "#ffe08a", from: 2.8 },
+          { kind: "pulse", at: [340, 680], color: "#ffe08a", radius: 110, from: 5 },
+          { kind: "text", at: [600, 820], text: "步调错开，漏出亮光！", size: "m", color: "#ffe08a", from: 6.4 }
+        ]
+      },
+      {
+        turn: 4, title: "3000 千米外一起听", duration: 12,
+        cues: [
+          { kind: "sprite", icon: "📐", path: [[250, 360]], size: 140, from: 0.3 },
+          { kind: "sprite", icon: "📐", path: [[950, 360]], size: 140, from: 1 },
+          { kind: "line", path: [[340, 360], [860, 360]], color: "#ff9f43", width: 5, dashed: true, draw: 1, from: 1.8 },
+          { kind: "label", at: [600, 360], text: "相隔 3000 千米", side: "top", pos: [600, 240], from: 2.6 },
+          { kind: "text", at: [600, 620], text: "几毫秒内同时收到", size: "m", color: "#225dac", from: 5.2 },
+          { kind: "text", at: [600, 780], text: "听见宇宙心跳的声音", size: "m", color: "#2f7d32", from: 7.6 }
+        ]
+      }
+    ]
   }
 ];
